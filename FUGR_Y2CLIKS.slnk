@@ -1174,5 +1174,48 @@ TYPES: BEGIN OF wi_buffer_type,
       message_struct            = message_struct.</fm_source>
    <functionModuleDocumentation/>
   </functionmodule>
+  <functionmodule NAME="Y2C_GET_DOC_DATA" REMOTE="R" STEXT="Proxy for SO_DOCUMENT_READ_API1">
+   <importing PARAMETER="DOCUMENT_ID" TYP="SOFOLENTI1-DOC_ID"/>
+   <exporting PARAMETER="DOCUMENT_DATA" TYP="SOFOLENTI1"/>
+   <exceptions EXCEPTION="DOCUMENT_ID_NOT_EXIST"/>
+   <documentation PARAMETER="DOCUMENT_ID" KIND="P" STEXT="Folder Entry ID (Obj+Fol+Forwarder Name)" INDEX=" 001"/>
+   <documentation PARAMETER="DOCUMENT_DATA" KIND="P" STEXT="SAPoffice: Information about a Folder Entry" INDEX=" 002"/>
+   <documentation PARAMETER="DOCUMENT_ID_NOT_EXIST" KIND="X" STEXT="Specified folder entry does not exist" INDEX=" 003"/>
+   <fm_source>*--------------------------------------------------------------------*
+* This FM is used to replace the standard SAP function module        *
+* SO_DOCUMENT_READ_API1 when you just want to get minimum file       *
+* details.                                                           *
+*                                                                    *
+* It is much faster because it does not attempt to retrieve the      *
+* document contents.                                                 *
+*--------------------------------------------------------------------*
+
+  DATA: doc_key           TYPE soentryi1,
+        sood              TYPE sood.
+
+  MOVE document_id TO doc_key.
+
+  SELECT SINGLE file_ext objtp objdes objlen FROM sood
+    INTO CORRESPONDING FIELDS OF sood
+    WHERE objtp = doc_key-objtp
+    AND   objyr = doc_key-objyr
+    AND   objno = doc_key-objno.
+
+  IF sy-subrc = 0.
+    document_data-doc_id = document_id.
+    document_data-object_id = document_id+17.
+    IF sood-file_ext IS NOT INITIAL.
+      document_data-obj_type = sood-file_ext.
+      TRANSLATE document_data-obj_type TO UPPER CASE.
+    ELSE.
+      document_data-obj_type = sood-objtp.
+    ENDIF.
+    document_data-obj_descr = sood-objdes.
+    document_data-doc_size = sood-objlen.
+  ELSE.
+    RAISE document_id_not_exist.
+  ENDIF.</fm_source>
+   <functionModuleDocumentation/>
+  </functionmodule>
  </functionmodules>
 </FUGR>
