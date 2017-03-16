@@ -10,4 +10,4 @@ For more details about 2-Cliks got to http://www.yelcho.com.au/2-cliks or you ca
 the data sheet by sending an email to info@2-cliks.com
 
 If you want to see some sample 2-Cliks Workflow Approval emails in your own email
-client send an email to samples@2-cliks.com
+client send an email to demos@2-cliks.com
