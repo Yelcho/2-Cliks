@@ -1,0 +1,8 @@
+title: 2-Cliks - SAP Business Workflow Approval Anywhere Anytime
+description: Client objects for 2-Cliks Workflow Approval
+google_analytics: 
+show_downloads: true
+theme: jekyll-theme-slate
+
+gems:
+  - jekyll-mentions
