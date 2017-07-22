@@ -1,0 +1,2795 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <AREAT>RFC Proxies</AREAT>
+   <INCLUDES>
+    <SOBJ_NAME>LY2CLIKSTOP</SOBJ_NAME>
+    <SOBJ_NAME>SAPLY2CLIKS</SOBJ_NAME>
+   </INCLUDES>
+   <FUNCTIONS>
+    <item>
+     <FUNCNAME>Y2C_CHANGEDOC_READ_HEADERS</FUNCNAME>
+     <INCLUDE>LY2CLIKSU14</INCLUDE>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Proxy for CHANGEDOCUMENT_READ_HEADERS</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>ARCHIVE_HANDLE</PARAMETER>
+       <DEFAULT>0</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>SY-TABIX</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>DATE_OF_CHANGE</PARAMETER>
+       <DEFAULT>&apos;00000000&apos;</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>CDHDR-UDATE</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>OBJECTCLASS</PARAMETER>
+       <TYP>CDHDR-OBJECTCLAS</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>OBJECTID</PARAMETER>
+       <DEFAULT>SPACE</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>CDHDR-OBJECTID</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>TIME_OF_CHANGE</PARAMETER>
+       <DEFAULT>&apos;000000&apos;</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>CDHDR-UTIME</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>USERNAME</PARAMETER>
+       <DEFAULT>SY-UNAME</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>CDHDR-USERNAME</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>LOCAL_TIME</PARAMETER>
+       <DEFAULT>SPACE</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>CHAR200</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>DATE_UNTIL</PARAMETER>
+       <DEFAULT>&apos;99991231&apos;</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>CDHDR-UDATE</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>TIME_UNTIL</PARAMETER>
+       <DEFAULT>&apos;235959&apos;</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>CDHDR-UTIME</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>NOPLUS_ASWILDCARD_INOBJID</PARAMETER>
+       <DEFAULT>SPACE</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>CHAR200</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>READ_CHANGEDOCU</PARAMETER>
+       <DEFAULT>SPACE</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>CHAR200</TYP>
+      </RSIMP>
+     </IMPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>I_CDHDR</PARAMETER>
+       <DBSTRUCT>CDHDR</DBSTRUCT>
+      </RSTBL>
+     </TABLES>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>ARCHIVE_HANDLE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Handle on Open Archive Files</STEXT>
+       <INDEX> 001</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>DATE_OF_CHANGE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>From-change date for search</STEXT>
+       <INDEX> 002</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>OBJECTCLASS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Object class for determining change document no.</STEXT>
+       <INDEX> 003</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>OBJECTID</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Object ID</STEXT>
+       <INDEX> 004</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>TIME_OF_CHANGE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>From-change time for search</STEXT>
+       <INDEX> 005</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>USERNAME</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Changed by</STEXT>
+       <INDEX> 006</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>LOCAL_TIME</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>local or system time (re: time zone)</STEXT>
+       <INDEX> 007</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>DATE_UNTIL</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Change date up to which you want to search</STEXT>
+       <INDEX> 008</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>TIME_UNTIL</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Change time up to which you want to search</STEXT>
+       <INDEX> 009</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>NOPLUS_ASWILDCARD_INOBJID</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Flag: If != SPACE then no conversion from PLUS: WILDCARD character</STEXT>
+       <INDEX> 010</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>READ_CHANGEDOCU</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Flag, if != SPACE, read from archive for CHANGEDOCU</STEXT>
+       <INDEX> 011</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>I_CDHDR</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Table with determined header information</STEXT>
+       <INDEX> 012</INDEX>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>Y2C_DOCUMENT_READ_API1</FUNCNAME>
+     <INCLUDE>LY2CLIKSU21</INCLUDE>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Proxy for SO_DOCUMENT_READ_API1</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>DOCUMENT_ID</PARAMETER>
+       <TYP>SOFOLENTI1-DOC_ID</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>FILTER</PARAMETER>
+       <DEFAULT>&apos;X &apos;</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>SOFILTERI1</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>DOCUMENT_DATA</PARAMETER>
+       <TYP>SOFOLENTI1</TYP>
+      </RSEXP>
+     </EXPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>OBJECT_HEADER</PARAMETER>
+       <DBSTRUCT>SOLISTI1</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>OBJECT_CONTENT</PARAMETER>
+       <DBSTRUCT>SOLISTI1</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>OBJECT_PARA</PARAMETER>
+       <DBSTRUCT>SOPARAI1</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>OBJECT_PARB</PARAMETER>
+       <DBSTRUCT>SOPARBI1</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ATTACHMENT_LIST</PARAMETER>
+       <DBSTRUCT>SOATTLSTI1</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>RECEIVER_LIST</PARAMETER>
+       <DBSTRUCT>SORECLSTI1</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>CONTENTS_HEX</PARAMETER>
+       <DBSTRUCT>SOLIX</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+     </TABLES>
+     <EXCEPTION>
+      <RSEXC>
+       <EXCEPTION>DOCUMENT_ID_NOT_EXIST</EXCEPTION>
+      </RSEXC>
+      <RSEXC>
+       <EXCEPTION>OPERATION_NO_AUTHORIZATION</EXCEPTION>
+      </RSEXC>
+      <RSEXC>
+       <EXCEPTION>X_ERROR</EXCEPTION>
+      </RSEXC>
+     </EXCEPTION>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>DOCUMENT_ID</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Folder Entry ID (Obj+Fol+Forwarder Name)</STEXT>
+       <INDEX> 001</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>FILTER</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SAPoffice: Filter for the Object Information</STEXT>
+       <INDEX> 002</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>DOCUMENT_DATA</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SAPoffice: Information about a Folder Entry</STEXT>
+       <INDEX> 003</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>OBJECT_HEADER</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SAPoffice: Single List with Column Length 255</STEXT>
+       <INDEX> 004</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>OBJECT_CONTENT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SAPoffice: Single List with Column Length 255</STEXT>
+       <INDEX> 005</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>OBJECT_PARA</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>ABAP/4: Old structure of selection table</STEXT>
+       <INDEX> 006</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>OBJECT_PARB</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SAPoffice: Parameter for Dialog Modules</STEXT>
+       <INDEX> 007</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ATTACHMENT_LIST</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SAPoffice: Structure of Attachments List</STEXT>
+       <INDEX> 008</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>RECEIVER_LIST</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SAPoffice: Structure of Recipient List</STEXT>
+       <INDEX> 009</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>CONTENTS_HEX</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SAPoffice: Binary data, length 255</STEXT>
+       <INDEX> 010</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>DOCUMENT_ID_NOT_EXIST</PARAMETER>
+       <KIND>X</KIND>
+       <STEXT>Specified folder entry does not exist</STEXT>
+       <INDEX> 011</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>OPERATION_NO_AUTHORIZATION</PARAMETER>
+       <KIND>X</KIND>
+       <STEXT>No authorization to view folder entry</STEXT>
+       <INDEX> 012</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>X_ERROR</PARAMETER>
+       <KIND>X</KIND>
+       <STEXT>Internal error or database inconsistency</STEXT>
+       <INDEX> 013</INDEX>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>Y2C_FUNCTION_SEARCH</FUNCNAME>
+     <INCLUDE>LY2CLIKSU09</INCLUDE>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Proxy for RFC_FUNCTION_SEARCH</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>FUNCNAME</PARAMETER>
+       <TYP>RS38L-NAME</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>GROUPNAME</PARAMETER>
+       <DEFAULT>SPACE</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>RS38L-AREA</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>LANGUAGE</PARAMETER>
+       <DEFAULT>SY-LANGU</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>SY-LANGU</TYP>
+      </RSIMP>
+     </IMPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>FUNCTIONS</PARAMETER>
+       <DBSTRUCT>RFCFUNC</DBSTRUCT>
+      </RSTBL>
+     </TABLES>
+     <EXCEPTION>
+      <RSEXC>
+       <EXCEPTION>NOTHING_SPECIFIED</EXCEPTION>
+      </RSEXC>
+      <RSEXC>
+       <EXCEPTION>NO_FUNCTION_FOUND</EXCEPTION>
+      </RSEXC>
+     </EXCEPTION>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>FUNCNAME</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Name of Function Module</STEXT>
+       <INDEX> 001</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>GROUPNAME</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Function group, to which the function module belongs</STEXT>
+       <INDEX> 002</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>LANGUAGE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Language Key of Current Text Environment</STEXT>
+       <INDEX> 003</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>FUNCTIONS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Remote function module short text</STEXT>
+       <INDEX> 004</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>NOTHING_SPECIFIED</PARAMETER>
+       <KIND>X</KIND>
+       <INDEX> 005</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>NO_FUNCTION_FOUND</PARAMETER>
+       <KIND>X</KIND>
+       <INDEX> 006</INDEX>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>Y2C_GET_CREATOR_NAME</FUNCNAME>
+     <INCLUDE>LY2CLIKSU13</INCLUDE>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Get workitem creator name</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>WORKITEM_ID</PARAMETER>
+       <TYP>SWR_STRUCT-WORKITEMID</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>CREATOR_NAME</PARAMETER>
+       <TYP>STRING</TYP>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>WORKITEM_ID</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Work item ID</STEXT>
+       <INDEX> 001</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>CREATOR_NAME</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 002</INDEX>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>Y2C_GET_DOC_DATA</FUNCNAME>
+     <INCLUDE>LY2CLIKSU25</INCLUDE>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Proxy for SO_DOCUMENT_READ_API1</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>DOCUMENT_ID</PARAMETER>
+       <TYP>SOFOLENTI1-DOC_ID</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>DOCUMENT_DATA</PARAMETER>
+       <TYP>SOFOLENTI1</TYP>
+      </RSEXP>
+     </EXPORT>
+     <EXCEPTION>
+      <RSEXC>
+       <EXCEPTION>DOCUMENT_ID_NOT_EXIST</EXCEPTION>
+      </RSEXC>
+     </EXCEPTION>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>DOCUMENT_ID</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Folder Entry ID (Obj+Fol+Forwarder Name)</STEXT>
+       <INDEX> 001</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>DOCUMENT_DATA</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SAPoffice: Information about a Folder Entry</STEXT>
+       <INDEX> 002</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>DOCUMENT_ID_NOT_EXIST</PARAMETER>
+       <KIND>X</KIND>
+       <STEXT>Specified folder entry does not exist</STEXT>
+       <INDEX> 003</INDEX>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>Y2C_GET_EMAIL_BODY</FUNCNAME>
+     <INCLUDE>LY2CLIKSU12</INCLUDE>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Return HTML fragment to be inserted in email body</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>WORKITEM_ID</PARAMETER>
+       <TYP>SWR_STRUCT-WORKITEMID</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>LANGUAGE</PARAMETER>
+       <DEFAULT>SY-LANGU</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>SWR_STRUCT-WILANGUAGE</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>HTML_DATA</PARAMETER>
+       <TYP>STRING</TYP>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>WORKITEM_ID</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Work item ID</STEXT>
+       <INDEX> 001</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>LANGUAGE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Language for Texts of a Work Item</STEXT>
+       <INDEX> 002</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>HTML_DATA</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>HTML data</STEXT>
+       <INDEX> 003</INDEX>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>Y2C_GET_SYSTEM_INFO</FUNCNAME>
+     <INCLUDE>LY2CLIKSU01</INCLUDE>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Proxy for RFC_GET_SYSTEM_INFO</SHORT_TEXT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>RFCSI_EXPORT</PARAMETER>
+       <TYP>RFCSI</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>RFC_LOGIN_COMPLETE</PARAMETER>
+       <TYP>SY-DEBUG</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>DIALOG_USER_TYPE</PARAMETER>
+       <TYP>SY-DEBUG</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>CURRENT_RESOURCES</PARAMETER>
+       <TYP>SY-INDEX</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>MAXIMAL_RESOURCES</PARAMETER>
+       <TYP>SY-INDEX</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>RECOMMENDED_DELAY</PARAMETER>
+       <TYP>SY-INDEX</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>DEST_COMMUNICATION_MESSAGE</PARAMETER>
+       <TYP>CHAR120</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>DEST_SYSTEM_MESSAGE</PARAMETER>
+       <TYP>CHAR120</TYP>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>RFCSI_EXPORT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>RFC System Information (See RFC_SYSTEM_INFO Function Module)</STEXT>
+       <INDEX> 001</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>RFC_LOGIN_COMPLETE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Internal ABAP System Field</STEXT>
+       <INDEX> 002</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>DIALOG_USER_TYPE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Internal ABAP System Field</STEXT>
+       <INDEX> 003</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>CURRENT_RESOURCES</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Loop Index</STEXT>
+       <INDEX> 004</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>MAXIMAL_RESOURCES</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Loop Index</STEXT>
+       <INDEX> 005</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>RECOMMENDED_DELAY</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Loop Index</STEXT>
+       <INDEX> 006</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>DEST_COMMUNICATION_MESSAGE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>char120</STEXT>
+       <INDEX> 007</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>DEST_SYSTEM_MESSAGE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>char120</STEXT>
+       <INDEX> 008</INDEX>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>Y2C_READ_LINKS</FUNCNAME>
+     <INCLUDE>LY2CLIKSU11</INCLUDE>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Proxy for reading GOS links</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IS_OBJECT</PARAMETER>
+       <TYP>SIBFLPORB</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IS_LOGSYS</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>LOGSYS</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>ET_LINKS</PARAMETER>
+       <TYP>OBL_T_LINK</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>ET_ROLES</PARAMETER>
+       <TYP>OBL_T_ROLE</TYP>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IS_OBJECT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Local Persistent Object Reference - BOR Compatible</STEXT>
+       <INDEX> 001</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IS_LOGSYS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Logical system</STEXT>
+       <INDEX> 002</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_LINKS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SOBL: Table with Relationship Records</STEXT>
+       <INDEX> 003</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_ROLES</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SOBL: Role Records for Object Relationships</STEXT>
+       <INDEX> 004</INDEX>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>Y2C_RESET_BUFFER</FUNCNAME>
+     <INCLUDE>LY2CLIKSU15</INCLUDE>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Resets buffer table</SHORT_TEXT>
+    </item>
+    <item>
+     <FUNCNAME>Y2C_USER_GET_DETAIL</FUNCNAME>
+     <INCLUDE>LY2CLIKSU08</INCLUDE>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Proxy for BAPI_USER_GET_DETAIL</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>USERNAME</PARAMETER>
+       <TYP>BAPIBNAME-BAPIBNAME</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>CACHE_RESULTS</PARAMETER>
+       <DEFAULT>&apos;X&apos;</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>FLAG_X</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>LOGONDATA</PARAMETER>
+       <TYP>BAPILOGOND</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>DEFAULTS</PARAMETER>
+       <TYP>BAPIDEFAUL</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>ADDRESS</PARAMETER>
+       <TYP>BAPIADDR3</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>COMPANY</PARAMETER>
+       <TYP>BAPIUSCOMP</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>SNC</PARAMETER>
+       <TYP>BAPISNCU</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>REF_USER</PARAMETER>
+       <TYP>BAPIREFUS</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>ALIAS</PARAMETER>
+       <TYP>BAPIALIAS</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>UCLASS</PARAMETER>
+       <TYP>BAPIUCLASS</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>LASTMODIFIED</PARAMETER>
+       <TYP>BAPIMODDAT</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>ISLOCKED</PARAMETER>
+       <TYP>BAPISLOCKD</TYP>
+      </RSEXP>
+     </EXPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>PARAMETER</PARAMETER>
+       <DBSTRUCT>BAPIPARAM</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>PROFILES</PARAMETER>
+       <DBSTRUCT>BAPIPROF</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ACTIVITYGROUPS</PARAMETER>
+       <DBSTRUCT>BAPIAGR</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>RETURN</PARAMETER>
+       <DBSTRUCT>BAPIRET2</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ADDTEL</PARAMETER>
+       <DBSTRUCT>BAPIADTEL</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ADDFAX</PARAMETER>
+       <DBSTRUCT>BAPIADFAX</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ADDTTX</PARAMETER>
+       <DBSTRUCT>BAPIADTTX</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ADDTLX</PARAMETER>
+       <DBSTRUCT>BAPIADTLX</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ADDSMTP</PARAMETER>
+       <DBSTRUCT>BAPIADSMTP</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ADDRML</PARAMETER>
+       <DBSTRUCT>BAPIADRML</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ADDX400</PARAMETER>
+       <DBSTRUCT>BAPIADX400</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ADDRFC</PARAMETER>
+       <DBSTRUCT>BAPIADRFC</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ADDPRT</PARAMETER>
+       <DBSTRUCT>BAPIADPRT</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ADDSSF</PARAMETER>
+       <DBSTRUCT>BAPIADSSF</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ADDURI</PARAMETER>
+       <DBSTRUCT>BAPIADURI</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ADDPAG</PARAMETER>
+       <DBSTRUCT>BAPIADPAG</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ADDCOMREM</PARAMETER>
+       <DBSTRUCT>BAPICOMREM</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>PARAMETER1</PARAMETER>
+       <DBSTRUCT>BAPIPARAM1</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>GROUPS</PARAMETER>
+       <DBSTRUCT>BAPIGROUPS</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>UCLASSSYS</PARAMETER>
+       <DBSTRUCT>BAPIUCLASSSYS</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>EXTIDHEAD</PARAMETER>
+       <DBSTRUCT>BAPIUSEXTIDHEAD</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>EXTIDPART</PARAMETER>
+       <DBSTRUCT>BAPIUSEXTIDPART</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>SYSTEMS</PARAMETER>
+       <DBSTRUCT>BAPIRCVSYS</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+     </TABLES>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>USERNAME</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>User Name in User Master Record</STEXT>
+       <INDEX> 001</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>CACHE_RESULTS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Indicator</STEXT>
+       <INDEX> 002</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>LOGONDATA</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>User: Logon Data Transfer Structure</STEXT>
+       <INDEX> 003</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>DEFAULTS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>User: Fixed Values Transfer Structure</STEXT>
+       <INDEX> 004</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ADDRESS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>BAPI reference structure for addresses (contact person)</STEXT>
+       <INDEX> 005</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>COMPANY</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Company to which a user is assigned</STEXT>
+       <INDEX> 006</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>SNC</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SNC attributes for a user</STEXT>
+       <INDEX> 007</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>REF_USER</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>User name</STEXT>
+       <INDEX> 008</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ALIAS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>User Name Alias</STEXT>
+       <INDEX> 009</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>UCLASS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>License-Related User Classification</STEXT>
+       <INDEX> 010</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>LASTMODIFIED</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>User: Last Change (Date and Time)</STEXT>
+       <INDEX> 011</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ISLOCKED</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>User Lock</STEXT>
+       <INDEX> 012</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>PARAMETER</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>User: Parameter Transfer Structure</STEXT>
+       <INDEX> 013</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>PROFILES</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>User: Profile Transfer Structure</STEXT>
+       <INDEX> 014</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ACTIVITYGROUPS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Activity groups</STEXT>
+       <INDEX> 015</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>RETURN</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Return Parameter</STEXT>
+       <INDEX> 016</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ADDTEL</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>BAPI Structure for Telephone Numbers (Bus. Address Services)</STEXT>
+       <INDEX> 017</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ADDFAX</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>BAPI Structure for Fax Numbers (Business Address Services)</STEXT>
+       <INDEX> 018</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ADDTTX</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>BAPI Structure for Teletex Numbers (Bus. Address Services)</STEXT>
+       <INDEX> 019</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ADDTLX</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>BAPI Structure for Telex Numbers (Business Address Services)</STEXT>
+       <INDEX> 020</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ADDSMTP</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>BAPI Structure for E-Mail Addresses (Bus. Address Services)</STEXT>
+       <INDEX> 021</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ADDRML</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>BAPI Structure for RML Addresses (Business Address Services)</STEXT>
+       <INDEX> 022</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ADDX400</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>BAPI Structure for X.400 Addresses (Bus. Address Services)</STEXT>
+       <INDEX> 023</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ADDRFC</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>BAPI Structure for RFC Addresses (Business Address Services)</STEXT>
+       <INDEX> 024</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ADDPRT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>BAPI Structure for PRT Addresses (Business Address Services)</STEXT>
+       <INDEX> 025</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ADDSSF</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>BAPI Structure for SSF Addresses (Business Address Services)</STEXT>
+       <INDEX> 026</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ADDURI</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>BAPI Structure for URI Addresses (Business Address Services)</STEXT>
+       <INDEX> 027</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ADDPAG</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>BAPI Structure for Pager Numbers (Business Address Services)</STEXT>
+       <INDEX> 028</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ADDCOMREM</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>BAPI structure for communication type comments</STEXT>
+       <INDEX> 029</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>PARAMETER1</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>User: Parameter Transfer Structure</STEXT>
+       <INDEX> 030</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>GROUPS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Transfer Structure for a List of User Groups</STEXT>
+       <INDEX> 031</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>UCLASSSYS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>System-Specific License-Related User Classification</STEXT>
+       <INDEX> 032</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>EXTIDHEAD</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Header Data for External ID of a User</STEXT>
+       <INDEX> 033</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>EXTIDPART</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Part of a Long Field for the External ID of a User</STEXT>
+       <INDEX> 034</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>SYSTEMS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>BAPI Structure for CUA Target Systems</STEXT>
+       <INDEX> 035</INDEX>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>Y2C_WAPI_CREATE_EVENT</FUNCNAME>
+     <INCLUDE>LY2CLIKSU16</INCLUDE>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Proxy for SAP_WAPI_CREATE_EVENT</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>OBJECT_TYPE</PARAMETER>
+       <TYP>SWR_STRUCT-OBJECT_TYP</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>OBJECT_KEY</PARAMETER>
+       <TYP>SWR_STRUCT-OBJECT_KEY</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>EVENT</PARAMETER>
+       <TYP>SWR_STRUCT-EVENT</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>COMMIT_WORK</PARAMETER>
+       <DEFAULT>&apos;X&apos;</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>SWR_STRUCT-COMMITFLAG</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>EVENT_LANGUAGE</PARAMETER>
+       <DEFAULT>SY-LANGU</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>SY-LANGU</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>LANGUAGE</PARAMETER>
+       <DEFAULT>SY-LANGU</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>SYLANGU</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>USER</PARAMETER>
+       <DEFAULT>SY-UNAME</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>SYUNAME</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IFS_XML_CONTAINER</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>XSTRING</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>RETURN_CODE</PARAMETER>
+       <TYP>SY-SUBRC</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>EVENT_ID</PARAMETER>
+       <TYP>SWR_STRUCT-EVENT_ID</TYP>
+      </RSEXP>
+     </EXPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>INPUT_CONTAINER</PARAMETER>
+       <DBSTRUCT>SWR_CONT</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>MESSAGE_LINES</PARAMETER>
+       <DBSTRUCT>SWR_MESSAG</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>MESSAGE_STRUCT</PARAMETER>
+       <DBSTRUCT>SWR_MSTRUC</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+     </TABLES>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>OBJECT_TYPE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Object Type</STEXT>
+       <INDEX> 001</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>OBJECT_KEY</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Object key</STEXT>
+       <INDEX> 002</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>EVENT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Event</STEXT>
+       <INDEX> 003</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>COMMIT_WORK</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Checkbox</STEXT>
+       <INDEX> 004</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>EVENT_LANGUAGE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Language Key of Current Text Environment</STEXT>
+       <INDEX> 005</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>LANGUAGE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Language Key of Current Text Environment</STEXT>
+       <INDEX> 006</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>USER</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>User Name</STEXT>
+       <INDEX> 007</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IFS_XML_CONTAINER</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 008</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>RETURN_CODE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Return Value of ABAP Statements</STEXT>
+       <INDEX> 009</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>EVENT_ID</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>ID of an event instance</STEXT>
+       <INDEX> 010</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>INPUT_CONTAINER</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Container (name-value pairs)</STEXT>
+       <INDEX> 011</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>MESSAGE_LINES</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Workflow Interfaces: Messages</STEXT>
+       <INDEX> 012</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>MESSAGE_STRUCT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Workflow interfaces: Message structure</STEXT>
+       <INDEX> 013</INDEX>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>Y2C_WAPI_DECISION_COMPLETE</FUNCNAME>
+     <INCLUDE>LY2CLIKSU10</INCLUDE>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Proxy for SAP_WAPI_DECISION_COMPLETE</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>WORKITEM_ID</PARAMETER>
+       <TYP>SWR_STRUCT-WORKITEMID</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>LANGUAGE</PARAMETER>
+       <DEFAULT>SY-LANGU</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>SWR_STRUCT-WILANGUAGE</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>USER</PARAMETER>
+       <DEFAULT>SY-UNAME</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>SYUNAME</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>DECISION_KEY</PARAMETER>
+       <TYP>SWR_DECIKEY</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>DO_COMMIT</PARAMETER>
+       <DEFAULT>&apos;X&apos;</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>XFELD</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>RETURN_CODE</PARAMETER>
+       <TYP>SY-SUBRC</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>NEW_STATUS</PARAMETER>
+       <TYP>SWW_WISTAT</TYP>
+      </RSEXP>
+     </EXPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>MESSAGE_LINES</PARAMETER>
+       <DBSTRUCT>SWR_MESSAG</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>MESSAGE_STRUCT</PARAMETER>
+       <DBSTRUCT>SWR_MSTRUC</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+     </TABLES>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>WORKITEM_ID</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Work item ID</STEXT>
+       <INDEX> 001</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>LANGUAGE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Language for Texts of a Work Item</STEXT>
+       <INDEX> 002</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>USER</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>User Name</STEXT>
+       <INDEX> 003</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>DECISION_KEY</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Index of an Alternative of a User Decision</STEXT>
+       <INDEX> 004</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>DO_COMMIT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Checkbox</STEXT>
+       <INDEX> 005</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>RETURN_CODE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Return Value of ABAP Statements</STEXT>
+       <INDEX> 006</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>NEW_STATUS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Processing Status of a Work Item</STEXT>
+       <INDEX> 007</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>MESSAGE_LINES</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Workflow Interfaces: Messages</STEXT>
+       <INDEX> 008</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>MESSAGE_STRUCT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Workflow interfaces: Message structure</STEXT>
+       <INDEX> 009</INDEX>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>Y2C_WAPI_DECISION_READ</FUNCNAME>
+     <INCLUDE>LY2CLIKSU03</INCLUDE>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Proxy for SAP_WAPI_DECISION_READ</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>WORKITEM_ID</PARAMETER>
+       <TYP>SWR_STRUCT-WORKITEMID</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>LANGUAGE</PARAMETER>
+       <DEFAULT>SY-LANGU</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>SWR_STRUCT-WILANGUAGE</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>USER</PARAMETER>
+       <DEFAULT>SY-UNAME</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>SYUNAME</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>RETURN_CODE</PARAMETER>
+       <TYP>SYSUBRC</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>DECISION_TITLE</PARAMETER>
+       <TYP>SWR_WIHDR-WI_TEXT</TYP>
+      </RSEXP>
+     </EXPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>ALTERNATIVES</PARAMETER>
+       <DBSTRUCT>SWR_DECIALTS</DBSTRUCT>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>MESSAGE_LINES</PARAMETER>
+       <DBSTRUCT>SWR_MESSAG</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>MESSAGE_STRUCT</PARAMETER>
+       <DBSTRUCT>SWR_MSTRUC</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+     </TABLES>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>WORKITEM_ID</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Work item ID</STEXT>
+       <INDEX> 001</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>LANGUAGE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Language for Texts of a Work Item</STEXT>
+       <INDEX> 002</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>USER</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>User Name</STEXT>
+       <INDEX> 003</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>RETURN_CODE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Return Value of ABAP Statements</STEXT>
+       <INDEX> 004</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>DECISION_TITLE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Work Item Text</STEXT>
+       <INDEX> 005</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ALTERNATIVES</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Alternatives of a User Decision</STEXT>
+       <INDEX> 006</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>MESSAGE_LINES</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Workflow Interfaces: Messages</STEXT>
+       <INDEX> 007</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>MESSAGE_STRUCT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Workflow interfaces: Message structure</STEXT>
+       <INDEX> 008</INDEX>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>Y2C_WAPI_FORWARD_WORKITEM</FUNCNAME>
+     <INCLUDE>LY2CLIKSU20</INCLUDE>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Proxy for SAP_WAPI_FORWARD_WORKITEM</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>WORKITEM_ID</PARAMETER>
+       <TYP>SWR_STRUCT-WORKITEMID</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>USER_ID</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>SY-UNAME</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>LANGUAGE</PARAMETER>
+       <DEFAULT>SY-LANGU</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>SYLANGU</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>DO_COMMIT</PARAMETER>
+       <DEFAULT>&apos;X&apos;</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>XFELD</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>CURRENT_USER</PARAMETER>
+       <DEFAULT>SY-UNAME</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>SYUNAME</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>RETURN_CODE</PARAMETER>
+       <TYP>SY-SUBRC</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>NEW_STATUS</PARAMETER>
+       <TYP>SWR_WISTAT</TYP>
+      </RSEXP>
+     </EXPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>MESSAGE_LINES</PARAMETER>
+       <DBSTRUCT>SWR_MESSAG</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>MESSAGE_STRUCT</PARAMETER>
+       <DBSTRUCT>SWR_MSTRUC</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>USER_IDS</PARAMETER>
+       <DBSTRUCT>SWRAGENT</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+     </TABLES>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>WORKITEM_ID</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Work item ID</STEXT>
+       <INDEX> 001</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>USER_ID</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>User Name</STEXT>
+       <INDEX> 002</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>LANGUAGE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Language Key of Current Text Environment</STEXT>
+       <INDEX> 003</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>DO_COMMIT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Checkbox</STEXT>
+       <INDEX> 004</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>CURRENT_USER</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>User Name</STEXT>
+       <INDEX> 005</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>RETURN_CODE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Return Value of ABAP Statements</STEXT>
+       <INDEX> 006</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>NEW_STATUS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Workflow interfaces: Work item status</STEXT>
+       <INDEX> 007</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>MESSAGE_LINES</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Workflow Interfaces: Messages</STEXT>
+       <INDEX> 008</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>MESSAGE_STRUCT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Workflow interfaces: Message structure</STEXT>
+       <INDEX> 009</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>USER_IDS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Role Resolution Result</STEXT>
+       <INDEX> 010</INDEX>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>Y2C_WAPI_GET_ATTACHMENTS</FUNCNAME>
+     <INCLUDE>LY2CLIKSU18</INCLUDE>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Proxy for SAP_WAPI_GET_ATTACHMENTS</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>WORKITEM_ID</PARAMETER>
+       <TYP>SWR_STRUCT-WORKITEMID</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>USER</PARAMETER>
+       <DEFAULT>SY-UNAME</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>SYUNAME</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>LANGUAGE</PARAMETER>
+       <DEFAULT>SY-LANGU</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>SYLANGU</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>RETURN_CODE</PARAMETER>
+       <TYP>SY-SUBRC</TYP>
+      </RSEXP>
+     </EXPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>ATTACHMENTS</PARAMETER>
+       <DBSTRUCT>SWR_OBJECT</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>MESSAGE_LINES</PARAMETER>
+       <DBSTRUCT>SWR_MESSAG</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>MESSAGE_STRUCT</PARAMETER>
+       <DBSTRUCT>SWR_MSTRUC</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+     </TABLES>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>WORKITEM_ID</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Work item ID</STEXT>
+       <INDEX> 001</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>USER</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>User Name</STEXT>
+       <INDEX> 002</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>LANGUAGE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Language Key of Current Text Environment</STEXT>
+       <INDEX> 003</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>RETURN_CODE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Return Value of ABAP Statements</STEXT>
+       <INDEX> 004</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ATTACHMENTS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>WAPI: Structure for objects</STEXT>
+       <INDEX> 005</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>MESSAGE_LINES</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Workflow Interfaces: Messages</STEXT>
+       <INDEX> 006</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>MESSAGE_STRUCT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Workflow interfaces: Message structure</STEXT>
+       <INDEX> 007</INDEX>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>Y2C_WAPI_GET_DEPENDENT_WIS</FUNCNAME>
+     <INCLUDE>LY2CLIKSU23</INCLUDE>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Proxy for SAP_WAPI_GET_DEPENDENT_WIS</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>WORKITEM_ID</PARAMETER>
+       <DBFIELD>SWR_STRUCT-WORKITEMID</DBFIELD>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>DIRECT_DEPENDANTS_ONLY</PARAMETER>
+       <DEFAULT>SPACE</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>XFELD</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>USER</PARAMETER>
+       <DEFAULT>SY-UNAME</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>SYUNAME</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>LANGUAGE</PARAMETER>
+       <DEFAULT>SY-LANGU</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>SYLANGU</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>TRANSLATE_WI_TEXT</PARAMETER>
+       <DEFAULT>SPACE</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>XFELD</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>RETURN_CODE</PARAMETER>
+       <DBFIELD>SY-SUBRC</DBFIELD>
+      </RSEXP>
+     </EXPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>ITEMS</PARAMETER>
+       <DBSTRUCT>SWR_WIHDR</DBSTRUCT>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>MESSAGE_LINES</PARAMETER>
+       <DBSTRUCT>SWR_MESSAG</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>MESSAGE_STRUCT</PARAMETER>
+       <DBSTRUCT>SWR_MSTRUC</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+     </TABLES>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>WORKITEM_ID</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Work item ID</STEXT>
+       <INDEX> 001</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>DIRECT_DEPENDANTS_ONLY</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Checkbox</STEXT>
+       <INDEX> 002</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>USER</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>User Name</STEXT>
+       <INDEX> 003</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>LANGUAGE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Language Key of Current Text Environment</STEXT>
+       <INDEX> 004</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>TRANSLATE_WI_TEXT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Checkbox</STEXT>
+       <INDEX> 005</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>RETURN_CODE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Return Value of ABAP Statements</STEXT>
+       <INDEX> 006</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ITEMS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Work Item Structure</STEXT>
+       <INDEX> 007</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>MESSAGE_LINES</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Workflow Interfaces: Messages</STEXT>
+       <INDEX> 008</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>MESSAGE_STRUCT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Workflow interfaces: Message structure</STEXT>
+       <INDEX> 009</INDEX>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>Y2C_WAPI_GET_HEADER</FUNCNAME>
+     <INCLUDE>LY2CLIKSU04</INCLUDE>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Proxy for SAP_WAPI_GET_HEADER</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>WORKITEM_ID</PARAMETER>
+       <TYP>SWR_STRUCT-WORKITEMID</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>USER</PARAMETER>
+       <DEFAULT>SY-UNAME</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>SYUNAME</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>LANGUAGE</PARAMETER>
+       <DEFAULT>SY-LANGU</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>SYLANGU</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>WORKITEM_ATTRIBUTES</PARAMETER>
+       <TYP>SWR_WIHDR</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>RETURN_CODE</PARAMETER>
+       <TYP>SY-SUBRC</TYP>
+      </RSEXP>
+     </EXPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>MESSAGE_LINES</PARAMETER>
+       <DBSTRUCT>SWR_MESSAG</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>MESSAGE_STRUCT</PARAMETER>
+       <DBSTRUCT>SWR_MSTRUC</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+     </TABLES>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>WORKITEM_ID</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Work item ID</STEXT>
+       <INDEX> 001</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>USER</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>User Name</STEXT>
+       <INDEX> 002</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>LANGUAGE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Language Key of Current Text Environment</STEXT>
+       <INDEX> 003</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>WORKITEM_ATTRIBUTES</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Work Item Structure</STEXT>
+       <INDEX> 004</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>RETURN_CODE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Return Value of ABAP Statements</STEXT>
+       <INDEX> 005</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>MESSAGE_LINES</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Workflow Interfaces: Messages</STEXT>
+       <INDEX> 006</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>MESSAGE_STRUCT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Workflow interfaces: Message structure</STEXT>
+       <INDEX> 007</INDEX>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>Y2C_WAPI_GET_OBJECTS</FUNCNAME>
+     <INCLUDE>LY2CLIKSU05</INCLUDE>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Proxy for SAP_WAPI_GET_OBJECTS</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>WORKITEM_ID</PARAMETER>
+       <TYP>SWR_STRUCT-WORKITEMID</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>LANGUAGE</PARAMETER>
+       <DEFAULT>SY-LANGU</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>SYLANGU</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>USER</PARAMETER>
+       <DEFAULT>SY-UNAME</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>SYUNAME</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>BUFFERED_ACCESS</PARAMETER>
+       <DEFAULT>&apos;X&apos;</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>XFELD</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>LEADING_OBJECT</PARAMETER>
+       <TYP>SWR_OBJECT</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>RETURN_CODE</PARAMETER>
+       <TYP>SY-SUBRC</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>LEADING_OBJECT_2</PARAMETER>
+       <TYP>SWR_OBJ_2</TYP>
+      </RSEXP>
+     </EXPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>OBJECTS</PARAMETER>
+       <DBSTRUCT>SWR_OBJECT</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>MESSAGE_LINES</PARAMETER>
+       <DBSTRUCT>SWR_MESSAG</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>MESSAGE_STRUCT</PARAMETER>
+       <DBSTRUCT>SWR_MSTRUC</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>OBJECTS_2</PARAMETER>
+       <DBSTRUCT>SWR_OBJ_2</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+     </TABLES>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>WORKITEM_ID</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Work item ID</STEXT>
+       <INDEX> 001</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>LANGUAGE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Language Key of Current Text Environment</STEXT>
+       <INDEX> 002</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>USER</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>User Name</STEXT>
+       <INDEX> 003</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>BUFFERED_ACCESS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Checkbox</STEXT>
+       <INDEX> 004</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>LEADING_OBJECT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>WAPI: Structure for objects</STEXT>
+       <INDEX> 005</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>RETURN_CODE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Return Value of ABAP Statements</STEXT>
+       <INDEX> 006</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>LEADING_OBJECT_2</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>WAPI: Generic Structure for Objects (After 4.6)</STEXT>
+       <INDEX> 007</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>OBJECTS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>WAPI: Structure for objects</STEXT>
+       <INDEX> 008</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>MESSAGE_LINES</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Workflow Interfaces: Messages</STEXT>
+       <INDEX> 009</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>MESSAGE_STRUCT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Workflow interfaces: Message structure</STEXT>
+       <INDEX> 010</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>OBJECTS_2</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>WAPI: Generic Structure for Objects (After 4.6)</STEXT>
+       <INDEX> 011</INDEX>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>Y2C_WAPI_GET_WI_ALL</FUNCNAME>
+     <INCLUDE>LY2CLIKSU02</INCLUDE>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Proxy for SAP_WAPI_GET_WI_ALL</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>LANGUAGE</PARAMETER>
+       <DEFAULT>SY-LANGU</DEFAULT>
+       <TYP>SYLANGU</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>WITH_DEADLINES</PARAMETER>
+       <DEFAULT>SPACE</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>XFELD</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>RETURN_CODE</PARAMETER>
+       <TYP>SYSUBRC</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>TIMESTAMP</PARAMETER>
+       <TYP>TIMESTAMPL</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>WORKITEMS_COUNT</PARAMETER>
+       <TYP>SYTABIX</TYP>
+      </RSEXP>
+     </EXPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>TASK_FILTER</PARAMETER>
+       <DBSTRUCT>SWR_TASK</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>WORKLIST</PARAMETER>
+       <DBSTRUCT>SWR_WIHDR</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>MESSAGE_LINES</PARAMETER>
+       <DBSTRUCT>SWR_MESSAG</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>MESSAGE_STRUCT</PARAMETER>
+       <DBSTRUCT>SWR_MSTRUC</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+     </TABLES>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>LANGUAGE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Language Key of Current Text Environment</STEXT>
+       <INDEX> 001</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>WITH_DEADLINES</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Checkbox</STEXT>
+       <INDEX> 002</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>RETURN_CODE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Return Value of ABAP Statements</STEXT>
+       <INDEX> 003</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>TIMESTAMP</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>UTC Time Stamp in Long Form (YYYYMMDDhhmmssmmmuuun)</STEXT>
+       <INDEX> 004</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>WORKITEMS_COUNT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Index of Internal Tables</STEXT>
+       <INDEX> 005</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>TASK_FILTER</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>WAPI: Tasks</STEXT>
+       <INDEX> 006</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>WORKLIST</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Work Item Structure</STEXT>
+       <INDEX> 007</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>MESSAGE_LINES</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Workflow Interfaces: Messages</STEXT>
+       <INDEX> 008</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>MESSAGE_STRUCT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Workflow interfaces: Message structure</STEXT>
+       <INDEX> 009</INDEX>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>Y2C_WAPI_READ_CONTAINER</FUNCNAME>
+     <INCLUDE>LY2CLIKSU06</INCLUDE>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Proxy for SAP_WAPI_READ_CONTAINER</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>WORKITEM_ID</PARAMETER>
+       <TYP>SWR_STRUCT-WORKITEMID</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>LANGUAGE</PARAMETER>
+       <DEFAULT>SY-LANGU</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>SYLANGU</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>USER</PARAMETER>
+       <DEFAULT>SY-UNAME</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>SYUNAME</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>RETURN_CODE</PARAMETER>
+       <TYP>SY-SUBRC</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>IFS_XML_CONTAINER</PARAMETER>
+       <TYP>XSTRING</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>IFS_XML_CONTAINER_SCHEMA</PARAMETER>
+       <TYP>XSTRING</TYP>
+      </RSEXP>
+     </EXPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>SIMPLE_CONTAINER</PARAMETER>
+       <DBSTRUCT>SWR_CONT</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>MESSAGE_LINES</PARAMETER>
+       <DBSTRUCT>SWR_MESSAG</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>MESSAGE_STRUCT</PARAMETER>
+       <DBSTRUCT>SWR_MSTRUC</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>SUBCONTAINER_BOR_OBJECTS</PARAMETER>
+       <DBSTRUCT>SWR_CONT</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>SUBCONTAINER_ALL_OBJECTS</PARAMETER>
+       <DBSTRUCT>SWR_CONT</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+     </TABLES>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>WORKITEM_ID</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Work item ID</STEXT>
+       <INDEX> 001</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>LANGUAGE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Language Key of Current Text Environment</STEXT>
+       <INDEX> 002</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>USER</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>User Name</STEXT>
+       <INDEX> 003</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>RETURN_CODE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Return Value of ABAP Statements</STEXT>
+       <INDEX> 004</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IFS_XML_CONTAINER</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 005</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IFS_XML_CONTAINER_SCHEMA</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 006</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>SIMPLE_CONTAINER</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Container (name-value pairs)</STEXT>
+       <INDEX> 007</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>MESSAGE_LINES</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Workflow Interfaces: Messages</STEXT>
+       <INDEX> 008</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>MESSAGE_STRUCT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Workflow interfaces: Message structure</STEXT>
+       <INDEX> 009</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>SUBCONTAINER_BOR_OBJECTS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Container (name-value pairs)</STEXT>
+       <INDEX> 010</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>SUBCONTAINER_ALL_OBJECTS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Container (name-value pairs)</STEXT>
+       <INDEX> 011</INDEX>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>Y2C_WAPI_SET_WORKITEM_STATUS</FUNCNAME>
+     <INCLUDE>LY2CLIKSU19</INCLUDE>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Proxy for SAP_WAPI_SET_WORKITEM_STATUS</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>WORKITEM_ID</PARAMETER>
+       <TYP>SWR_STRUCT-WORKITEMID</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>STATUS</PARAMETER>
+       <TYP>SWR_WISTAT-STATUS</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>USER</PARAMETER>
+       <DEFAULT>SY-UNAME</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>SYUNAME</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>LANGUAGE</PARAMETER>
+       <DEFAULT>SY-LANGU</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>SYLANGU</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>DO_COMMIT</PARAMETER>
+       <DEFAULT>&apos;X&apos;</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>XFELD</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>NEW_STATUS</PARAMETER>
+       <TYP>SWR_WISTAT</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>RETURN_CODE</PARAMETER>
+       <TYP>SY-SUBRC</TYP>
+      </RSEXP>
+     </EXPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>MESSAGE_LINES</PARAMETER>
+       <DBSTRUCT>SWR_MESSAG</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>MESSAGE_STRUCT</PARAMETER>
+       <DBSTRUCT>SWR_MSTRUC</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+     </TABLES>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>WORKITEM_ID</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Work item ID</STEXT>
+       <INDEX> 001</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>STATUS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Processing Status of a Work Item</STEXT>
+       <INDEX> 002</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>USER</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>User Name</STEXT>
+       <INDEX> 003</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>LANGUAGE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Language Key of Current Text Environment</STEXT>
+       <INDEX> 004</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>DO_COMMIT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Checkbox</STEXT>
+       <INDEX> 005</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>NEW_STATUS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Workflow interfaces: Work item status</STEXT>
+       <INDEX> 006</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>RETURN_CODE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Return Value of ABAP Statements</STEXT>
+       <INDEX> 007</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>MESSAGE_LINES</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Workflow Interfaces: Messages</STEXT>
+       <INDEX> 008</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>MESSAGE_STRUCT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Workflow interfaces: Message structure</STEXT>
+       <INDEX> 009</INDEX>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>Y2C_WAPI_SUBSTITUTES_GET</FUNCNAME>
+     <INCLUDE>LY2CLIKSU22</INCLUDE>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Proxy for SAP_WAPI_SUBSTITUTES_GET</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>SUBSTITUTED_OBJECT</PARAMETER>
+       <TYP>SWRAGENT</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>START_DATE</PARAMETER>
+       <DEFAULT>SY-DATUM</DEFAULT>
+       <TYP>SYDATUM</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>END_DATE</PARAMETER>
+       <DEFAULT>&apos;99991231&apos;</DEFAULT>
+       <TYP>SYDATUM</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>LANGUAGE</PARAMETER>
+       <DEFAULT>SY-LANGU</DEFAULT>
+       <TYP>SYLANGU</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>RETURN_CODE</PARAMETER>
+       <TYP>SYSUBRC</TYP>
+      </RSEXP>
+     </EXPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>SUBSTITUTES</PARAMETER>
+       <DBSTRUCT>SWR_SUBSTITUTE</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>MESSAGE_LINES</PARAMETER>
+       <DBSTRUCT>SWR_MESSAG</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>MESSAGE_STRUCT</PARAMETER>
+       <DBSTRUCT>SWR_MSTRUC</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+     </TABLES>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>SUBSTITUTED_OBJECT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Role Resolution Result</STEXT>
+       <INDEX> 001</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>START_DATE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Current Date of Application Server</STEXT>
+       <INDEX> 002</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>END_DATE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Current Date of Application Server</STEXT>
+       <INDEX> 003</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>LANGUAGE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Language Key of Current Text Environment</STEXT>
+       <INDEX> 004</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>RETURN_CODE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Return Value of ABAP Statements</STEXT>
+       <INDEX> 005</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>SUBSTITUTES</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Substitute</STEXT>
+       <INDEX> 006</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>MESSAGE_LINES</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Workflow Interfaces: Messages</STEXT>
+       <INDEX> 007</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>MESSAGE_STRUCT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Workflow interfaces: Message structure</STEXT>
+       <INDEX> 008</INDEX>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>Y2C_WAPI_WORKITEM_COMPLETE</FUNCNAME>
+     <INCLUDE>LY2CLIKSU24</INCLUDE>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Proxy fro SAP_WAPI_WORKITEM_COMPLETE</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>WORKITEM_ID</PARAMETER>
+       <DBFIELD>SWR_STRUCT-WORKITEMID</DBFIELD>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>ACTUAL_AGENT</PARAMETER>
+       <DEFAULT>SY-UNAME</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>SYUNAME</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>LANGUAGE</PARAMETER>
+       <DEFAULT>SY-LANGU</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>SYLANGU</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>SET_OBSOLET</PARAMETER>
+       <DEFAULT>SPACE</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>XFELD</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>DO_COMMIT</PARAMETER>
+       <DEFAULT>&apos;X&apos;</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>XFELD</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>DO_CALLBACK_IN_BACKGROUND</PARAMETER>
+       <DEFAULT>&apos;X&apos;</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>XFELD</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IFS_XML_CONTAINER</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>XSTRING</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>RETURN_CODE</PARAMETER>
+       <DBFIELD>SY-SUBRC</DBFIELD>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>NEW_STATUS</PARAMETER>
+       <TYP>SWW_WISTAT</TYP>
+      </RSEXP>
+     </EXPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>SIMPLE_CONTAINER</PARAMETER>
+       <DBSTRUCT>SWR_CONT</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>MESSAGE_LINES</PARAMETER>
+       <DBSTRUCT>SWR_MESSAG</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>MESSAGE_STRUCT</PARAMETER>
+       <DBSTRUCT>SWR_MSTRUC</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+     </TABLES>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>WORKITEM_ID</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Work item ID</STEXT>
+       <INDEX> 001</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ACTUAL_AGENT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>User Name</STEXT>
+       <INDEX> 002</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>LANGUAGE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Language Key of Current Text Environment</STEXT>
+       <INDEX> 003</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>SET_OBSOLET</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Checkbox</STEXT>
+       <INDEX> 004</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>DO_COMMIT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Checkbox</STEXT>
+       <INDEX> 005</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>DO_CALLBACK_IN_BACKGROUND</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Checkbox</STEXT>
+       <INDEX> 006</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IFS_XML_CONTAINER</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 007</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>RETURN_CODE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Return Value of ABAP Statements</STEXT>
+       <INDEX> 008</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>NEW_STATUS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Processing Status of a Work Item</STEXT>
+       <INDEX> 009</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>SIMPLE_CONTAINER</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Container (name-value pairs)</STEXT>
+       <INDEX> 010</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>MESSAGE_LINES</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Workflow Interfaces: Messages</STEXT>
+       <INDEX> 011</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>MESSAGE_STRUCT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Workflow interfaces: Message structure</STEXT>
+       <INDEX> 012</INDEX>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>Y2C_WAPI_WORKITEM_RECIPIENTS</FUNCNAME>
+     <INCLUDE>LY2CLIKSU07</INCLUDE>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Proxy for SAP_WAPI_WORKITEM_RECIPIENTS</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>WORKITEM_ID</PARAMETER>
+       <TYP>SWR_STRUCT-WORKITEMID</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>LANGUAGE</PARAMETER>
+       <DEFAULT>SY-LANGU</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>SYLANGU</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>USER</PARAMETER>
+       <DEFAULT>SY-UNAME</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>SYUNAME</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>RETURN_CODE</PARAMETER>
+       <TYP>SY-SUBRC</TYP>
+      </RSEXP>
+     </EXPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>RECIPIENTS</PARAMETER>
+       <DBSTRUCT>SWRAGENT</DBSTRUCT>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>MESSAGE_LINES</PARAMETER>
+       <DBSTRUCT>SWR_MESSAG</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>MESSAGE_STRUCT</PARAMETER>
+       <DBSTRUCT>SWR_MSTRUC</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ORIGINAL_RULE_RESULT</PARAMETER>
+       <DBSTRUCT>SWRAGENT</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+     </TABLES>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>WORKITEM_ID</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Work item ID</STEXT>
+       <INDEX> 001</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>LANGUAGE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Language Key of Current Text Environment</STEXT>
+       <INDEX> 002</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>USER</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>User Name</STEXT>
+       <INDEX> 003</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>RETURN_CODE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Return Value of ABAP Statements</STEXT>
+       <INDEX> 004</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>RECIPIENTS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Role Resolution Result</STEXT>
+       <INDEX> 005</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>MESSAGE_LINES</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Workflow Interfaces: Messages</STEXT>
+       <INDEX> 006</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>MESSAGE_STRUCT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Workflow interfaces: Message structure</STEXT>
+       <INDEX> 007</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ORIGINAL_RULE_RESULT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Role Resolution Result</STEXT>
+       <INDEX> 008</INDEX>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>Y2C_WAPI_WRITE_CONTAINER</FUNCNAME>
+     <INCLUDE>LY2CLIKSU17</INCLUDE>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Proxy for SAP_WAPI_WRITE_CONTAINER</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>WORKITEM_ID</PARAMETER>
+       <TYP>SWR_STRUCT-WORKITEMID</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>LANGUAGE</PARAMETER>
+       <DEFAULT>SY-LANGU</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>SYLANGU</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>ACTUAL_AGENT</PARAMETER>
+       <DEFAULT>SY-UNAME</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>SYUNAME</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>DO_COMMIT</PARAMETER>
+       <DEFAULT>&apos;X&apos;</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>XFELD</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IFS_XML_CONTAINER</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>XSTRING</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>OVERWRITE_TABLES_SIMPLE_CONT</PARAMETER>
+       <DEFAULT>SPACE</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>XFELD</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>RETURN_CODE</PARAMETER>
+       <TYP>SY-SUBRC</TYP>
+      </RSEXP>
+     </EXPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>SIMPLE_CONTAINER</PARAMETER>
+       <DBSTRUCT>SWR_CONT</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>MESSAGE_LINES</PARAMETER>
+       <DBSTRUCT>SWR_MESSAG</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>MESSAGE_STRUCT</PARAMETER>
+       <DBSTRUCT>SWR_MSTRUC</DBSTRUCT>
+       <OPTIONAL>X</OPTIONAL>
+      </RSTBL>
+     </TABLES>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>WORKITEM_ID</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Work item ID</STEXT>
+       <INDEX> 001</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>LANGUAGE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Language Key of Current Text Environment</STEXT>
+       <INDEX> 002</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ACTUAL_AGENT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>User Name</STEXT>
+       <INDEX> 003</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>DO_COMMIT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Checkbox</STEXT>
+       <INDEX> 004</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IFS_XML_CONTAINER</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 005</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>OVERWRITE_TABLES_SIMPLE_CONT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Checkbox</STEXT>
+       <INDEX> 006</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>RETURN_CODE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Return Value of ABAP Statements</STEXT>
+       <INDEX> 007</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>SIMPLE_CONTAINER</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Container (name-value pairs)</STEXT>
+       <INDEX> 008</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>MESSAGE_LINES</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Workflow Interfaces: Messages</STEXT>
+       <INDEX> 009</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>MESSAGE_STRUCT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Workflow interfaces: Message structure</STEXT>
+       <INDEX> 010</INDEX>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+   </FUNCTIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

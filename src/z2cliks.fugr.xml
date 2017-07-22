@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <AREAT>Customer-specific functions</AREAT>
+   <INCLUDES>
+    <SOBJ_NAME>LZ2CLIKSTOP</SOBJ_NAME>
+    <SOBJ_NAME>SAPLZ2CLIKS</SOBJ_NAME>
+   </INCLUDES>
+   <FUNCTIONS>
+    <item>
+     <FUNCNAME>Z2C_GET_EMAIL_BODY</FUNCNAME>
+     <INCLUDE>LZ2CLIKSU01</INCLUDE>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Return HTML fragment to be inserted in email body</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>WORKITEM_ID</PARAMETER>
+       <TYP>SWR_STRUCT-WORKITEMID</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>LANGUAGE</PARAMETER>
+       <DEFAULT>SY-LANGU</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>SWR_STRUCT-WILANGUAGE</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>HTML_DATA</PARAMETER>
+       <TYP>STRING</TYP>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>WORKITEM_ID</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Work item ID</STEXT>
+       <INDEX> 001</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>LANGUAGE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Language for Texts of a Work Item</STEXT>
+       <INDEX> 002</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>HTML_DATA</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>HTML data</STEXT>
+       <INDEX> 003</INDEX>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+   </FUNCTIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>
