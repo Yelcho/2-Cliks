@@ -10,7 +10,6 @@
    <FUNCTIONS>
     <item>
      <FUNCNAME>Z2C_GET_EMAIL_BODY</FUNCNAME>
-     <INCLUDE>LZ2CLIKSU01</INCLUDE>
      <REMOTE_CALL>R</REMOTE_CALL>
      <SHORT_TEXT>Return HTML fragment to be inserted in email body</SHORT_TEXT>
      <IMPORT>
