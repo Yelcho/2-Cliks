@@ -588,6 +588,150 @@
      </DOCUMENTATION>
     </item>
     <item>
+     <FUNCNAME>Y2C_PT_ARQ_ATTACHMENT_GET</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Proxy for PT_ARQ_ATTACHMENT_GET</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IM_REQUEST_ID</PARAMETER>
+       <TYP>SYSUUID_C</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IM_VERSION_NO</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>INT4</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IM_DOCUMENT_TYPE</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>SAEOBJART</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>EX_HAS_ERRORS</PARAMETER>
+       <TYP>BOOLEAN</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>EX_MESSAGES</PARAMETER>
+       <TYP>BAPIRET2_TAB</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>ET_ATTACHMENTS</PARAMETER>
+       <TYP>Y2C_HRESS_T_PTARQ_ATT_INFO</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>EX_HAS_ATTACHMENT</PARAMETER>
+       <TYP>BOOLE_D</TYP>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IM_REQUEST_ID</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>UUID in character form</STEXT>
+       <INDEX> 001</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IM_VERSION_NO</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Natural number</STEXT>
+       <INDEX> 002</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IM_DOCUMENT_TYPE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Document type</STEXT>
+       <INDEX> 003</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>EX_HAS_ERRORS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Boolean Variable (X=True, -=False, Space=Unknown)</STEXT>
+       <INDEX> 004</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>EX_MESSAGES</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Error Messages</STEXT>
+       <INDEX> 005</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_ATTACHMENTS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Y2C_HRESS_S_PTARQ_ATT_INFO table type</STEXT>
+       <INDEX> 006</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>EX_HAS_ATTACHMENT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Data element for domain BOOLE: TRUE (=&apos;X&apos;) and FALSE (=&apos; &apos;)</STEXT>
+       <INDEX> 007</INDEX>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
+     <FUNCNAME>Y2C_PT_ARQ_ATTACH_DETAIL_GET</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Proxy for PT_ARQ_ATTACHMENT_DETAIL_GET</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IV_ARC_DOC_ID</PARAMETER>
+       <TYP>SAEARDOID</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_DOC_TYPE</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>SAEOBJART</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>EX_FILE_CONTENT</PARAMETER>
+       <TYP>XSTRING</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>EX_HAS_ERRORS</PARAMETER>
+       <TYP>BOOLEAN</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>EX_MESSAGES</PARAMETER>
+       <TYP>BAPIRET2_TAB</TYP>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IV_ARC_DOC_ID</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SAP ArchiveLink: Document ID</STEXT>
+       <INDEX> 001</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_DOC_TYPE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Document type</STEXT>
+       <INDEX> 002</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>EX_FILE_CONTENT</PARAMETER>
+       <KIND>P</KIND>
+       <INDEX> 003</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>EX_HAS_ERRORS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Boolean Variable (X=True, -=False, Space=Unknown)</STEXT>
+       <INDEX> 004</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>EX_MESSAGES</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Error Messages</STEXT>
+       <INDEX> 005</INDEX>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
      <FUNCNAME>Y2C_READ_LINKS</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
      <SHORT_TEXT>Proxy for reading GOS links</SHORT_TEXT>
