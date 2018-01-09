@@ -3,9 +3,9 @@
 
 This repo contains some client objects for the [2-Cliks Workflow Approval](http://yelcho.github.io/2-Cliks/) solution.
 
-I recommend you use the abapGit project for installing this repo. Find it at http://abapgit.org
+Use the abapGit project for installing this repo. Find it at http://abapgit.org
 
-SAPlink slinkee is also here if you prefer that method.
+A .zip of the repo is also here if you prefer that method.
 
 2-Cliks is technology provided by Yelcho Systems Consulting to allow decision makers
 to execute SAP Business Workflow decision steps anywhere, anytime and on any device.
