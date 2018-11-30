@@ -384,6 +384,48 @@
      </DOCUMENTATION>
     </item>
     <item>
+     <FUNCNAME>Y2C_GET_ALINK_DOC_DATA</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Proxy for SO_DOCUMENT_READ_API1</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>DOCUMENT_ID</PARAMETER>
+       <TYP>SOFOLENTI1-DOC_ID</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>DOCUMENT_DATA</PARAMETER>
+       <TYP>SOFOLENTI1</TYP>
+      </RSEXP>
+     </EXPORT>
+     <EXCEPTION>
+      <RSEXC>
+       <EXCEPTION>DOCUMENT_ID_NOT_EXIST</EXCEPTION>
+      </RSEXC>
+     </EXCEPTION>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>DOCUMENT_ID</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Folder Entry ID (Obj+Fol+Forwarder Name)</STEXT>
+       <INDEX> 001</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>DOCUMENT_DATA</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>SAPoffice: Information about a Folder Entry</STEXT>
+       <INDEX> 002</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>DOCUMENT_ID_NOT_EXIST</PARAMETER>
+       <KIND>X</KIND>
+       <STEXT>Specified folder entry does not exist</STEXT>
+       <INDEX> 003</INDEX>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
      <FUNCNAME>Y2C_GET_CREATOR_NAME</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
      <SHORT_TEXT>Get workitem creator name</SHORT_TEXT>
