@@ -22,7 +22,7 @@ FUNCTION y2c_wapi_get_objects.
       workitem_id      = workitem_id
       language         = language
       user             = user
-          "buffered_access  = buffered_access
+      "buffered_access  = buffered_access
     IMPORTING
       leading_object   = leading_object
       return_code      = return_code
