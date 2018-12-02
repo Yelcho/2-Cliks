@@ -39,19 +39,19 @@ FUNCTION y2c_wapi_get_wi_all.
 * of handling this will need to be implemented.              *
 *                                                            *
 **************************************************************
-  DATA: lr_workitem     TYPE REF TO   swr_wihdr,
-        lt_wi_buffer    TYPE TABLE OF wi_buffer_type,
-        lr_wi_buffer    TYPE REF TO   wi_buffer_type,
-        lt_recipients   TYPE TABLE OF swragent,
-        lr_recipient    TYPE REF TO   swragent,
-        lt_recipients2  TYPE TABLE OF swragent,
-        lr_recipient2   TYPE REF TO   swragent,
-        lt_substitutes  TYPE          swrtsubstitute,
-        lr_substitute   TYPE REF TO   swr_substitute,
-        lt_addsmtp      TYPE TABLE OF bapiadsmtp,
-        ls_addsmtp      TYPE          bapiadsmtp,
-        lv_changed      TYPE          boolean,
-        xcookie         TYPE          xstring.
+  DATA: lr_workitem    TYPE REF TO   swr_wihdr,
+        lt_wi_buffer   TYPE TABLE OF wi_buffer_type,
+        lr_wi_buffer   TYPE REF TO   wi_buffer_type,
+        lt_recipients  TYPE TABLE OF swragent,
+        lr_recipient   TYPE REF TO   swragent,
+        lt_recipients2 TYPE TABLE OF swragent,
+        lr_recipient2  TYPE REF TO   swragent,
+        lt_substitutes TYPE          swrtsubstitute,
+        lr_substitute  TYPE REF TO   swr_substitute,
+        lt_addsmtp     TYPE TABLE OF bapiadsmtp,
+        ls_addsmtp     TYPE          bapiadsmtp,
+        lv_changed     TYPE          boolean,
+        xcookie        TYPE          xstring.
 
   CHECK worklist[] IS NOT INITIAL.
 

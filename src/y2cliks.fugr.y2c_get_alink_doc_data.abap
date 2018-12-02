@@ -16,8 +16,10 @@ FUNCTION y2c_get_alink_doc_data .
   DATA ar_time              TYPE sapb-sapablzeit.
   DATA document_type        TYPE sapb-sapdoktyp.
   DATA al_components        TYPE STANDARD TABLE OF components.
+  DATA al_component         TYPE REF TO components.
   DATA compsl               TYPE STANDARD TABLE OF scms_compsl.
   DATA connections        TYPE STANDARD TABLE OF toav0.
+  DATA connection         TYPE REF TO toav0.
 
   SPLIT document_id AT '|' INTO archiv_id archiv_doc_id.
 
@@ -58,7 +60,7 @@ FUNCTION y2c_get_alink_doc_data .
       nothing_found = 1
       OTHERS        = 2.
   IF sy-subrc = 0.
-    LOOP AT connections REFERENCE INTO DATA(connection). ENDLOOP.
+    LOOP AT connections REFERENCE INTO connection. ENDLOOP.
     SELECT SINGLE objecttext
       FROM toasp
       INTO document_data-obj_descr
@@ -66,7 +68,7 @@ FUNCTION y2c_get_alink_doc_data .
       AND language = sy-langu.
   ENDIF.
 
-  LOOP AT al_components REFERENCE INTO DATA(al_component).
+  LOOP AT al_components REFERENCE INTO al_component.
     document_data-doc_size = document_data-doc_size + al_component->compsize.
   ENDLOOP.
 

@@ -36,8 +36,11 @@ FUNCTION y2c_read_links.
 * Look for any SAP Archivelink attachments
 *--------------------------------------------------------------------*
   DATA: connect_info TYPE STANDARD TABLE OF toav0,
+        connection   TYPE REF TO toav0,
         object_id    TYPE sapb-sapobjid,
-        sap_object   TYPE toaom-sap_object.
+        sap_object   TYPE toaom-sap_object,
+        link         TYPE REF TO obl_s_link.
+
   MOVE is_object-instid TO object_id.
   MOVE is_object-objtype TO sap_object.
   CALL FUNCTION 'ARCHIV_CONNECTINFO_GET_META'
@@ -50,8 +53,8 @@ FUNCTION y2c_read_links.
       error_connectiontable = 1
       OTHERS                = 2.
 
-  LOOP AT connect_info REFERENCE INTO DATA(connection).
-    APPEND INITIAL LINE TO et_links REFERENCE INTO DATA(link).
+  LOOP AT connect_info REFERENCE INTO connection.
+    APPEND INITIAL LINE TO et_links REFERENCE INTO link.
     link->roletype_a = 'SAPALINK'.
     link->instid_a = connection->object_id.
     link->typeid_a = connection->sap_object.

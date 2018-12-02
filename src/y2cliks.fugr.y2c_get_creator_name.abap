@@ -7,11 +7,11 @@ FUNCTION y2c_get_creator_name.
 *"     VALUE(CREATOR_NAME) TYPE  STRING
 *"--------------------------------------------------------------------
 
-  DATA: lv_workitem TYPE swr_struct-workitemid,
-          ls_wi_header TYPE swr_wihdr,
-          lv_username TYPE uname,
-          ls_address TYPE bapiaddr3,
-          lt_return TYPE bapiret2_tab.
+  DATA: lv_workitem  TYPE swr_struct-workitemid,
+        ls_wi_header TYPE swr_wihdr,
+        lv_username  TYPE uname,
+        ls_address   TYPE bapiaddr3,
+        lt_return    TYPE bapiret2_tab.
 
   MOVE workitem_id TO ls_wi_header-wi_chckwi.
 
