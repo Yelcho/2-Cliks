@@ -1,4 +1,4 @@
-FUNCTION Y2C_GET_EMAIL_BODY.
+FUNCTION y2c_get_email_body.
 *"----------------------------------------------------------------------
 *"*"Local Interface:
 *"  IMPORTING
@@ -24,9 +24,9 @@ FUNCTION Y2C_GET_EMAIL_BODY.
 *                                                                                *
 *--------------------------------------------------------------------------------*
 
-  DATA: lt_container  TYPE        swrtcont,
-        lr_swr_cont   TYPE REF TO swr_cont,
-        lv_value      TYPE        char50.
+  DATA: lt_container TYPE        swrtcont,
+        lr_swr_cont  TYPE REF TO swr_cont,
+        lv_value     TYPE        char50.
 
   CALL FUNCTION 'SAP_WAPI_READ_CONTAINER'
     EXPORTING

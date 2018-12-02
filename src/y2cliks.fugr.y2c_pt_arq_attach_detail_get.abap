@@ -11,6 +11,7 @@ FUNCTION y2c_pt_arq_attach_detail_get.
 *"----------------------------------------------------------------------
 
   CONSTANTS func TYPE char30 VALUE 'PT_ARQ_ATTACHMENT_DETAIL_GET'.
+
   TRY.
       CALL FUNCTION func
         EXPORTING

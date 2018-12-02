@@ -44,40 +44,40 @@ FUNCTION y2c_user_get_detail.
   CALL FUNCTION 'BAPI_USER_GET_DETAIL'
     EXPORTING
       username  = username
-          "cache_results  = cache_results
+      "cache_results  = cache_results
     IMPORTING
       logondata = logondata
       defaults  = defaults
       address   = address
       company   = company
-          "snc            = snc
-          "ref_user       = ref_user
-          "alias          = alias
-          "uclass         = uclass
-          "lastmodified   = lastmodified
+      "snc            = snc
+      "ref_user       = ref_user
+      "alias          = alias
+      "uclass         = uclass
+      "lastmodified   = lastmodified
       islocked  = islocked
     TABLES      "parameter      = parameter
-          "profiles       = profiles
-          "activitygroups = activitygroups
+      "profiles       = profiles
+      "activitygroups = activitygroups
       return    = return
-          "addtel         = addtel
-          "addfax         = addfax
-          "addttx         = addttx
-          "addtlx         = addtlx
+      "addtel         = addtel
+      "addfax         = addfax
+      "addttx         = addttx
+      "addtlx         = addtlx
       addsmtp   = addsmtp
-          "addrml         = addrml
-          "addx400        = addx400
-          "addrfc         = addrfc
-          "addprt         = addprt
-          "addssf         = addssf
-          "adduri         = adduri
-          "addpag         = addpag
-          "addcomrem      = addcomrem
-          "parameter1     = parameter1
-          "groups         = groups
-          "uclasssys      = uclasssys
-          "extidhead      = extidhead
-          "extidpart      = extidpart
+      "addrml         = addrml
+      "addx400        = addx400
+      "addrfc         = addrfc
+      "addprt         = addprt
+      "addssf         = addssf
+      "adduri         = adduri
+      "addpag         = addpag
+      "addcomrem      = addcomrem
+      "parameter1     = parameter1
+      "groups         = groups
+      "uclasssys      = uclasssys
+      "extidhead      = extidhead
+      "extidpart      = extidpart
     .      "systems        = systems
 
 ENDFUNCTION.
