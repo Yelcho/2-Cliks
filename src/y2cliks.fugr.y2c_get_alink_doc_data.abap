@@ -18,8 +18,8 @@ FUNCTION y2c_get_alink_doc_data .
   DATA al_components        TYPE STANDARD TABLE OF components.
   DATA al_component         TYPE REF TO components.
   DATA compsl               TYPE STANDARD TABLE OF scms_compsl.
-  DATA connections        TYPE STANDARD TABLE OF toav0.
-  DATA connection         TYPE REF TO toav0.
+  DATA connections          TYPE STANDARD TABLE OF toav0.
+  DATA connection           TYPE REF TO toav0.
 
   SPLIT document_id AT '|' INTO archiv_id archiv_doc_id.
 
