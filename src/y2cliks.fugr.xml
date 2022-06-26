@@ -89,73 +89,61 @@
        <PARAMETER>ARCHIVE_HANDLE</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Handle on Open Archive Files</STEXT>
-       <INDEX> 001</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>DATE_OF_CHANGE</PARAMETER>
        <KIND>P</KIND>
        <STEXT>From-change date for search</STEXT>
-       <INDEX> 002</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>OBJECTCLASS</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Object class for determining change document no.</STEXT>
-       <INDEX> 003</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>OBJECTID</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Object ID</STEXT>
-       <INDEX> 004</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>TIME_OF_CHANGE</PARAMETER>
        <KIND>P</KIND>
        <STEXT>From-change time for search</STEXT>
-       <INDEX> 005</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>USERNAME</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Changed by</STEXT>
-       <INDEX> 006</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>LOCAL_TIME</PARAMETER>
        <KIND>P</KIND>
        <STEXT>local or system time (re: time zone)</STEXT>
-       <INDEX> 007</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>DATE_UNTIL</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Change date up to which you want to search</STEXT>
-       <INDEX> 008</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>TIME_UNTIL</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Change time up to which you want to search</STEXT>
-       <INDEX> 009</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>NOPLUS_ASWILDCARD_INOBJID</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Flag: If != SPACE then no conversion from PLUS: WILDCARD character</STEXT>
-       <INDEX> 010</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>READ_CHANGEDOCU</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Flag, if != SPACE, read from archive for CHANGEDOCU</STEXT>
-       <INDEX> 011</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>I_CDHDR</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Table with determined header information</STEXT>
-       <INDEX> 012</INDEX>
       </RSFDO>
      </DOCUMENTATION>
     </item>
@@ -234,79 +222,66 @@
        <PARAMETER>DOCUMENT_ID</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Folder Entry ID (Obj+Fol+Forwarder Name)</STEXT>
-       <INDEX> 001</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>FILTER</PARAMETER>
        <KIND>P</KIND>
        <STEXT>SAPoffice: Filter for the Object Information</STEXT>
-       <INDEX> 002</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>DOCUMENT_DATA</PARAMETER>
        <KIND>P</KIND>
        <STEXT>SAPoffice: Information about a Folder Entry</STEXT>
-       <INDEX> 003</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>OBJECT_HEADER</PARAMETER>
        <KIND>P</KIND>
        <STEXT>SAPoffice: Single List with Column Length 255</STEXT>
-       <INDEX> 004</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>OBJECT_CONTENT</PARAMETER>
        <KIND>P</KIND>
        <STEXT>SAPoffice: Single List with Column Length 255</STEXT>
-       <INDEX> 005</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>OBJECT_PARA</PARAMETER>
        <KIND>P</KIND>
        <STEXT>ABAP/4: Old structure of selection table</STEXT>
-       <INDEX> 006</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>OBJECT_PARB</PARAMETER>
        <KIND>P</KIND>
        <STEXT>SAPoffice: Parameter for Dialog Modules</STEXT>
-       <INDEX> 007</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>ATTACHMENT_LIST</PARAMETER>
        <KIND>P</KIND>
        <STEXT>SAPoffice: Structure of Attachments List</STEXT>
-       <INDEX> 008</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>RECEIVER_LIST</PARAMETER>
        <KIND>P</KIND>
        <STEXT>SAPoffice: Structure of Recipient List</STEXT>
-       <INDEX> 009</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>CONTENTS_HEX</PARAMETER>
        <KIND>P</KIND>
        <STEXT>SAPoffice: Binary data, length 255</STEXT>
-       <INDEX> 010</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>DOCUMENT_ID_NOT_EXIST</PARAMETER>
        <KIND>X</KIND>
        <STEXT>Specified folder entry does not exist</STEXT>
-       <INDEX> 011</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>OPERATION_NO_AUTHORIZATION</PARAMETER>
        <KIND>X</KIND>
        <STEXT>No authorization to view folder entry</STEXT>
-       <INDEX> 012</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>X_ERROR</PARAMETER>
        <KIND>X</KIND>
        <STEXT>Internal error or database inconsistency</STEXT>
-       <INDEX> 013</INDEX>
       </RSFDO>
      </DOCUMENTATION>
     </item>
@@ -345,41 +320,42 @@
       <RSEXC>
        <EXCEPTION>NO_FUNCTION_FOUND</EXCEPTION>
       </RSEXC>
+      <RSEXC>
+       <EXCEPTION>OTHER</EXCEPTION>
+      </RSEXC>
      </EXCEPTION>
      <DOCUMENTATION>
       <RSFDO>
        <PARAMETER>FUNCNAME</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Name of Function Module</STEXT>
-       <INDEX> 001</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>GROUPNAME</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Function group, to which the function module belongs</STEXT>
-       <INDEX> 002</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>LANGUAGE</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Language Key of Current Text Environment</STEXT>
-       <INDEX> 003</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>FUNCTIONS</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Remote function module short text</STEXT>
-       <INDEX> 004</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>NOTHING_SPECIFIED</PARAMETER>
        <KIND>X</KIND>
-       <INDEX> 005</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>NO_FUNCTION_FOUND</PARAMETER>
        <KIND>X</KIND>
-       <INDEX> 006</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>OTHER</PARAMETER>
+       <KIND>X</KIND>
       </RSFDO>
      </DOCUMENTATION>
     </item>
@@ -409,19 +385,16 @@
        <PARAMETER>DOCUMENT_ID</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Folder Entry ID (Obj+Fol+Forwarder Name)</STEXT>
-       <INDEX> 001</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>DOCUMENT_DATA</PARAMETER>
        <KIND>P</KIND>
        <STEXT>SAPoffice: Information about a Folder Entry</STEXT>
-       <INDEX> 002</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>DOCUMENT_ID_NOT_EXIST</PARAMETER>
        <KIND>X</KIND>
        <STEXT>Specified folder entry does not exist</STEXT>
-       <INDEX> 003</INDEX>
       </RSFDO>
      </DOCUMENTATION>
     </item>
@@ -446,12 +419,10 @@
        <PARAMETER>WORKITEM_ID</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Work item ID</STEXT>
-       <INDEX> 001</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>CREATOR_NAME</PARAMETER>
        <KIND>P</KIND>
-       <INDEX> 002</INDEX>
       </RSFDO>
      </DOCUMENTATION>
     </item>
@@ -481,19 +452,16 @@
        <PARAMETER>DOCUMENT_ID</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Folder Entry ID (Obj+Fol+Forwarder Name)</STEXT>
-       <INDEX> 001</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>DOCUMENT_DATA</PARAMETER>
        <KIND>P</KIND>
        <STEXT>SAPoffice: Information about a Folder Entry</STEXT>
-       <INDEX> 002</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>DOCUMENT_ID_NOT_EXIST</PARAMETER>
        <KIND>X</KIND>
        <STEXT>Specified folder entry does not exist</STEXT>
-       <INDEX> 003</INDEX>
       </RSFDO>
      </DOCUMENTATION>
     </item>
@@ -524,19 +492,16 @@
        <PARAMETER>WORKITEM_ID</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Work item ID</STEXT>
-       <INDEX> 001</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>LANGUAGE</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Language for Texts of a Work Item</STEXT>
-       <INDEX> 002</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>HTML_DATA</PARAMETER>
        <KIND>P</KIND>
        <STEXT>HTML data</STEXT>
-       <INDEX> 003</INDEX>
       </RSFDO>
      </DOCUMENTATION>
     </item>
@@ -583,49 +548,41 @@
        <PARAMETER>RFCSI_EXPORT</PARAMETER>
        <KIND>P</KIND>
        <STEXT>RFC System Information (See RFC_SYSTEM_INFO Function Module)</STEXT>
-       <INDEX> 001</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>RFC_LOGIN_COMPLETE</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Internal ABAP System Field</STEXT>
-       <INDEX> 002</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>DIALOG_USER_TYPE</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Internal ABAP System Field</STEXT>
-       <INDEX> 003</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>CURRENT_RESOURCES</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Loop Index</STEXT>
-       <INDEX> 004</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>MAXIMAL_RESOURCES</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Loop Index</STEXT>
-       <INDEX> 005</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>RECOMMENDED_DELAY</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Loop Index</STEXT>
-       <INDEX> 006</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>DEST_COMMUNICATION_MESSAGE</PARAMETER>
        <KIND>P</KIND>
        <STEXT>char120</STEXT>
-       <INDEX> 007</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>DEST_SYSTEM_MESSAGE</PARAMETER>
        <KIND>P</KIND>
        <STEXT>char120</STEXT>
-       <INDEX> 008</INDEX>
       </RSFDO>
      </DOCUMENTATION>
     </item>
@@ -672,43 +629,36 @@
        <PARAMETER>IM_REQUEST_ID</PARAMETER>
        <KIND>P</KIND>
        <STEXT>UUID in character form</STEXT>
-       <INDEX> 001</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IM_VERSION_NO</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Natural number</STEXT>
-       <INDEX> 002</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IM_DOCUMENT_TYPE</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Document type</STEXT>
-       <INDEX> 003</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>EX_HAS_ERRORS</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Boolean Variable (X=True, -=False, Space=Unknown)</STEXT>
-       <INDEX> 004</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>EX_MESSAGES</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Error Messages</STEXT>
-       <INDEX> 005</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>ET_ATTACHMENTS</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Y2C_HRESS_S_PTARQ_ATT_INFO table type</STEXT>
-       <INDEX> 006</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>EX_HAS_ATTACHMENT</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Data element for domain BOOLE: TRUE (=&apos;X&apos;) and FALSE (=&apos; &apos;)</STEXT>
-       <INDEX> 007</INDEX>
       </RSFDO>
      </DOCUMENTATION>
     </item>
@@ -746,30 +696,25 @@
        <PARAMETER>IV_ARC_DOC_ID</PARAMETER>
        <KIND>P</KIND>
        <STEXT>SAP ArchiveLink: Document ID</STEXT>
-       <INDEX> 001</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IV_DOC_TYPE</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Document type</STEXT>
-       <INDEX> 002</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>EX_FILE_CONTENT</PARAMETER>
        <KIND>P</KIND>
-       <INDEX> 003</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>EX_HAS_ERRORS</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Boolean Variable (X=True, -=False, Space=Unknown)</STEXT>
-       <INDEX> 004</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>EX_MESSAGES</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Error Messages</STEXT>
-       <INDEX> 005</INDEX>
       </RSFDO>
      </DOCUMENTATION>
     </item>
@@ -803,25 +748,21 @@
        <PARAMETER>IS_OBJECT</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Local Persistent Object Reference - BOR Compatible</STEXT>
-       <INDEX> 001</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IS_LOGSYS</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Logical system</STEXT>
-       <INDEX> 002</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>ET_LINKS</PARAMETER>
        <KIND>P</KIND>
        <STEXT>SOBL: Table with Relationship Records</STEXT>
-       <INDEX> 003</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>ET_ROLES</PARAMETER>
        <KIND>P</KIND>
        <STEXT>SOBL: Role Records for Object Relationships</STEXT>
-       <INDEX> 004</INDEX>
       </RSFDO>
      </DOCUMENTATION>
     </item>
@@ -1010,211 +951,176 @@
        <PARAMETER>USERNAME</PARAMETER>
        <KIND>P</KIND>
        <STEXT>User Name in User Master Record</STEXT>
-       <INDEX> 001</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>CACHE_RESULTS</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Indicator</STEXT>
-       <INDEX> 002</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>LOGONDATA</PARAMETER>
        <KIND>P</KIND>
        <STEXT>User: Logon Data Transfer Structure</STEXT>
-       <INDEX> 003</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>DEFAULTS</PARAMETER>
        <KIND>P</KIND>
        <STEXT>User: Fixed Values Transfer Structure</STEXT>
-       <INDEX> 004</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>ADDRESS</PARAMETER>
        <KIND>P</KIND>
        <STEXT>BAPI reference structure for addresses (contact person)</STEXT>
-       <INDEX> 005</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>COMPANY</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Company to which a user is assigned</STEXT>
-       <INDEX> 006</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>SNC</PARAMETER>
        <KIND>P</KIND>
        <STEXT>SNC attributes for a user</STEXT>
-       <INDEX> 007</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>REF_USER</PARAMETER>
        <KIND>P</KIND>
        <STEXT>User name</STEXT>
-       <INDEX> 008</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>ALIAS</PARAMETER>
        <KIND>P</KIND>
        <STEXT>User Name Alias</STEXT>
-       <INDEX> 009</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>UCLASS</PARAMETER>
        <KIND>P</KIND>
        <STEXT>License-Related User Classification</STEXT>
-       <INDEX> 010</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>LASTMODIFIED</PARAMETER>
        <KIND>P</KIND>
        <STEXT>User: Last Change (Date and Time)</STEXT>
-       <INDEX> 011</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>ISLOCKED</PARAMETER>
        <KIND>P</KIND>
        <STEXT>User Lock</STEXT>
-       <INDEX> 012</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>PARAMETER</PARAMETER>
        <KIND>P</KIND>
        <STEXT>User: Parameter Transfer Structure</STEXT>
-       <INDEX> 013</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>PROFILES</PARAMETER>
        <KIND>P</KIND>
        <STEXT>User: Profile Transfer Structure</STEXT>
-       <INDEX> 014</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>ACTIVITYGROUPS</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Activity groups</STEXT>
-       <INDEX> 015</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>RETURN</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Return Parameter</STEXT>
-       <INDEX> 016</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>ADDTEL</PARAMETER>
        <KIND>P</KIND>
        <STEXT>BAPI Structure for Telephone Numbers (Bus. Address Services)</STEXT>
-       <INDEX> 017</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>ADDFAX</PARAMETER>
        <KIND>P</KIND>
        <STEXT>BAPI Structure for Fax Numbers (Business Address Services)</STEXT>
-       <INDEX> 018</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>ADDTTX</PARAMETER>
        <KIND>P</KIND>
        <STEXT>BAPI Structure for Teletex Numbers (Bus. Address Services)</STEXT>
-       <INDEX> 019</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>ADDTLX</PARAMETER>
        <KIND>P</KIND>
        <STEXT>BAPI Structure for Telex Numbers (Business Address Services)</STEXT>
-       <INDEX> 020</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>ADDSMTP</PARAMETER>
        <KIND>P</KIND>
        <STEXT>BAPI Structure for E-Mail Addresses (Bus. Address Services)</STEXT>
-       <INDEX> 021</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>ADDRML</PARAMETER>
        <KIND>P</KIND>
        <STEXT>BAPI Structure for RML Addresses (Business Address Services)</STEXT>
-       <INDEX> 022</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>ADDX400</PARAMETER>
        <KIND>P</KIND>
        <STEXT>BAPI Structure for X.400 Addresses (Bus. Address Services)</STEXT>
-       <INDEX> 023</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>ADDRFC</PARAMETER>
        <KIND>P</KIND>
        <STEXT>BAPI Structure for RFC Addresses (Business Address Services)</STEXT>
-       <INDEX> 024</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>ADDPRT</PARAMETER>
        <KIND>P</KIND>
        <STEXT>BAPI Structure for PRT Addresses (Business Address Services)</STEXT>
-       <INDEX> 025</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>ADDSSF</PARAMETER>
        <KIND>P</KIND>
        <STEXT>BAPI Structure for SSF Addresses (Business Address Services)</STEXT>
-       <INDEX> 026</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>ADDURI</PARAMETER>
        <KIND>P</KIND>
        <STEXT>BAPI Structure for URI Addresses (Business Address Services)</STEXT>
-       <INDEX> 027</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>ADDPAG</PARAMETER>
        <KIND>P</KIND>
        <STEXT>BAPI Structure for Pager Numbers (Business Address Services)</STEXT>
-       <INDEX> 028</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>ADDCOMREM</PARAMETER>
        <KIND>P</KIND>
        <STEXT>BAPI structure for communication type comments</STEXT>
-       <INDEX> 029</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>PARAMETER1</PARAMETER>
        <KIND>P</KIND>
        <STEXT>User: Parameter Transfer Structure</STEXT>
-       <INDEX> 030</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>GROUPS</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Transfer Structure for a List of User Groups</STEXT>
-       <INDEX> 031</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>UCLASSSYS</PARAMETER>
        <KIND>P</KIND>
        <STEXT>System-Specific License-Related User Classification</STEXT>
-       <INDEX> 032</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>EXTIDHEAD</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Header Data for External ID of a User</STEXT>
-       <INDEX> 033</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>EXTIDPART</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Part of a Long Field for the External ID of a User</STEXT>
-       <INDEX> 034</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>SYSTEMS</PARAMETER>
        <KIND>P</KIND>
        <STEXT>BAPI Structure for CUA Target Systems</STEXT>
-       <INDEX> 035</INDEX>
       </RSFDO>
      </DOCUMENTATION>
     </item>
@@ -1297,78 +1203,65 @@
        <PARAMETER>OBJECT_TYPE</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Object Type</STEXT>
-       <INDEX> 001</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>OBJECT_KEY</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Object key</STEXT>
-       <INDEX> 002</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>EVENT</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Event</STEXT>
-       <INDEX> 003</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>COMMIT_WORK</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Checkbox</STEXT>
-       <INDEX> 004</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>EVENT_LANGUAGE</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Language Key of Current Text Environment</STEXT>
-       <INDEX> 005</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>LANGUAGE</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Language Key of Current Text Environment</STEXT>
-       <INDEX> 006</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>USER</PARAMETER>
        <KIND>P</KIND>
        <STEXT>User Name</STEXT>
-       <INDEX> 007</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IFS_XML_CONTAINER</PARAMETER>
        <KIND>P</KIND>
-       <INDEX> 008</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>RETURN_CODE</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Return Value of ABAP Statements</STEXT>
-       <INDEX> 009</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>EVENT_ID</PARAMETER>
        <KIND>P</KIND>
        <STEXT>ID of an event instance</STEXT>
-       <INDEX> 010</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>INPUT_CONTAINER</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Container (name-value pairs)</STEXT>
-       <INDEX> 011</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>MESSAGE_LINES</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Workflow Interfaces: Messages</STEXT>
-       <INDEX> 012</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>MESSAGE_STRUCT</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Workflow interfaces: Message structure</STEXT>
-       <INDEX> 013</INDEX>
       </RSFDO>
      </DOCUMENTATION>
     </item>
@@ -1431,55 +1324,46 @@
        <PARAMETER>WORKITEM_ID</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Work item ID</STEXT>
-       <INDEX> 001</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>LANGUAGE</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Language for Texts of a Work Item</STEXT>
-       <INDEX> 002</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>USER</PARAMETER>
        <KIND>P</KIND>
        <STEXT>User Name</STEXT>
-       <INDEX> 003</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>DECISION_KEY</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Index of an Alternative of a User Decision</STEXT>
-       <INDEX> 004</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>DO_COMMIT</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Checkbox</STEXT>
-       <INDEX> 005</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>RETURN_CODE</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Return Value of ABAP Statements</STEXT>
-       <INDEX> 006</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>NEW_STATUS</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Processing Status of a Work Item</STEXT>
-       <INDEX> 007</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>MESSAGE_LINES</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Workflow Interfaces: Messages</STEXT>
-       <INDEX> 008</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>MESSAGE_STRUCT</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Workflow interfaces: Message structure</STEXT>
-       <INDEX> 009</INDEX>
       </RSFDO>
      </DOCUMENTATION>
     </item>
@@ -1536,49 +1420,41 @@
        <PARAMETER>WORKITEM_ID</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Work item ID</STEXT>
-       <INDEX> 001</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>LANGUAGE</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Language for Texts of a Work Item</STEXT>
-       <INDEX> 002</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>USER</PARAMETER>
        <KIND>P</KIND>
        <STEXT>User Name</STEXT>
-       <INDEX> 003</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>RETURN_CODE</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Return Value of ABAP Statements</STEXT>
-       <INDEX> 004</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>DECISION_TITLE</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Work Item Text</STEXT>
-       <INDEX> 005</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>ALTERNATIVES</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Alternatives of a User Decision</STEXT>
-       <INDEX> 006</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>MESSAGE_LINES</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Workflow Interfaces: Messages</STEXT>
-       <INDEX> 007</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>MESSAGE_STRUCT</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Workflow interfaces: Message structure</STEXT>
-       <INDEX> 008</INDEX>
       </RSFDO>
      </DOCUMENTATION>
     </item>
@@ -1647,61 +1523,51 @@
        <PARAMETER>WORKITEM_ID</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Work item ID</STEXT>
-       <INDEX> 001</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>USER_ID</PARAMETER>
        <KIND>P</KIND>
        <STEXT>User Name</STEXT>
-       <INDEX> 002</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>LANGUAGE</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Language Key of Current Text Environment</STEXT>
-       <INDEX> 003</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>DO_COMMIT</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Checkbox</STEXT>
-       <INDEX> 004</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>CURRENT_USER</PARAMETER>
        <KIND>P</KIND>
        <STEXT>User Name</STEXT>
-       <INDEX> 005</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>RETURN_CODE</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Return Value of ABAP Statements</STEXT>
-       <INDEX> 006</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>NEW_STATUS</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Workflow interfaces: Work item status</STEXT>
-       <INDEX> 007</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>MESSAGE_LINES</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Workflow Interfaces: Messages</STEXT>
-       <INDEX> 008</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>MESSAGE_STRUCT</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Workflow interfaces: Message structure</STEXT>
-       <INDEX> 009</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>USER_IDS</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Role Resolution Result</STEXT>
-       <INDEX> 010</INDEX>
       </RSFDO>
      </DOCUMENTATION>
     </item>
@@ -1755,43 +1621,36 @@
        <PARAMETER>WORKITEM_ID</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Work item ID</STEXT>
-       <INDEX> 001</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>USER</PARAMETER>
        <KIND>P</KIND>
        <STEXT>User Name</STEXT>
-       <INDEX> 002</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>LANGUAGE</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Language Key of Current Text Environment</STEXT>
-       <INDEX> 003</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>RETURN_CODE</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Return Value of ABAP Statements</STEXT>
-       <INDEX> 004</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>ATTACHMENTS</PARAMETER>
        <KIND>P</KIND>
        <STEXT>WAPI: Structure for objects</STEXT>
-       <INDEX> 005</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>MESSAGE_LINES</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Workflow Interfaces: Messages</STEXT>
-       <INDEX> 006</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>MESSAGE_STRUCT</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Workflow interfaces: Message structure</STEXT>
-       <INDEX> 007</INDEX>
       </RSFDO>
      </DOCUMENTATION>
     </item>
@@ -1856,55 +1715,46 @@
        <PARAMETER>WORKITEM_ID</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Work item ID</STEXT>
-       <INDEX> 001</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>DIRECT_DEPENDANTS_ONLY</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Checkbox</STEXT>
-       <INDEX> 002</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>USER</PARAMETER>
        <KIND>P</KIND>
        <STEXT>User Name</STEXT>
-       <INDEX> 003</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>LANGUAGE</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Language Key of Current Text Environment</STEXT>
-       <INDEX> 004</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>TRANSLATE_WI_TEXT</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Checkbox</STEXT>
-       <INDEX> 005</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>RETURN_CODE</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Return Value of ABAP Statements</STEXT>
-       <INDEX> 006</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>ITEMS</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Work Item Structure</STEXT>
-       <INDEX> 007</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>MESSAGE_LINES</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Workflow Interfaces: Messages</STEXT>
-       <INDEX> 008</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>MESSAGE_STRUCT</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Workflow interfaces: Message structure</STEXT>
-       <INDEX> 009</INDEX>
       </RSFDO>
      </DOCUMENTATION>
     </item>
@@ -1957,43 +1807,36 @@
        <PARAMETER>WORKITEM_ID</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Work item ID</STEXT>
-       <INDEX> 001</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>USER</PARAMETER>
        <KIND>P</KIND>
        <STEXT>User Name</STEXT>
-       <INDEX> 002</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>LANGUAGE</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Language Key of Current Text Environment</STEXT>
-       <INDEX> 003</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>WORKITEM_ATTRIBUTES</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Work Item Structure</STEXT>
-       <INDEX> 004</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>RETURN_CODE</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Return Value of ABAP Statements</STEXT>
-       <INDEX> 005</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>MESSAGE_LINES</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Workflow Interfaces: Messages</STEXT>
-       <INDEX> 006</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>MESSAGE_STRUCT</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Workflow interfaces: Message structure</STEXT>
-       <INDEX> 007</INDEX>
       </RSFDO>
      </DOCUMENTATION>
     </item>
@@ -2066,67 +1909,56 @@
        <PARAMETER>WORKITEM_ID</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Work item ID</STEXT>
-       <INDEX> 001</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>LANGUAGE</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Language Key of Current Text Environment</STEXT>
-       <INDEX> 002</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>USER</PARAMETER>
        <KIND>P</KIND>
        <STEXT>User Name</STEXT>
-       <INDEX> 003</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>BUFFERED_ACCESS</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Checkbox</STEXT>
-       <INDEX> 004</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>LEADING_OBJECT</PARAMETER>
        <KIND>P</KIND>
        <STEXT>WAPI: Structure for objects</STEXT>
-       <INDEX> 005</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>RETURN_CODE</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Return Value of ABAP Statements</STEXT>
-       <INDEX> 006</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>LEADING_OBJECT_2</PARAMETER>
        <KIND>P</KIND>
        <STEXT>WAPI: Generic Structure for Objects (After 4.6)</STEXT>
-       <INDEX> 007</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>OBJECTS</PARAMETER>
        <KIND>P</KIND>
        <STEXT>WAPI: Structure for objects</STEXT>
-       <INDEX> 008</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>MESSAGE_LINES</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Workflow Interfaces: Messages</STEXT>
-       <INDEX> 009</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>MESSAGE_STRUCT</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Workflow interfaces: Message structure</STEXT>
-       <INDEX> 010</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>OBJECTS_2</PARAMETER>
        <KIND>P</KIND>
        <STEXT>WAPI: Generic Structure for Objects (After 4.6)</STEXT>
-       <INDEX> 011</INDEX>
       </RSFDO>
      </DOCUMENTATION>
     </item>
@@ -2188,55 +2020,46 @@
        <PARAMETER>LANGUAGE</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Language Key of Current Text Environment</STEXT>
-       <INDEX> 001</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>WITH_DEADLINES</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Checkbox</STEXT>
-       <INDEX> 002</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>RETURN_CODE</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Return Value of ABAP Statements</STEXT>
-       <INDEX> 003</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>TIMESTAMP</PARAMETER>
        <KIND>P</KIND>
        <STEXT>UTC Time Stamp in Long Form (YYYYMMDDhhmmssmmmuuun)</STEXT>
-       <INDEX> 004</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>WORKITEMS_COUNT</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Index of Internal Tables</STEXT>
-       <INDEX> 005</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>TASK_FILTER</PARAMETER>
        <KIND>P</KIND>
        <STEXT>WAPI: Tasks</STEXT>
-       <INDEX> 006</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>WORKLIST</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Work Item Structure</STEXT>
-       <INDEX> 007</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>MESSAGE_LINES</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Workflow Interfaces: Messages</STEXT>
-       <INDEX> 008</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>MESSAGE_STRUCT</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Workflow interfaces: Message structure</STEXT>
-       <INDEX> 009</INDEX>
       </RSFDO>
      </DOCUMENTATION>
     </item>
@@ -2308,65 +2131,54 @@
        <PARAMETER>WORKITEM_ID</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Work item ID</STEXT>
-       <INDEX> 001</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>LANGUAGE</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Language Key of Current Text Environment</STEXT>
-       <INDEX> 002</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>USER</PARAMETER>
        <KIND>P</KIND>
        <STEXT>User Name</STEXT>
-       <INDEX> 003</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>RETURN_CODE</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Return Value of ABAP Statements</STEXT>
-       <INDEX> 004</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IFS_XML_CONTAINER</PARAMETER>
        <KIND>P</KIND>
-       <INDEX> 005</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IFS_XML_CONTAINER_SCHEMA</PARAMETER>
        <KIND>P</KIND>
-       <INDEX> 006</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>SIMPLE_CONTAINER</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Container (name-value pairs)</STEXT>
-       <INDEX> 007</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>MESSAGE_LINES</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Workflow Interfaces: Messages</STEXT>
-       <INDEX> 008</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>MESSAGE_STRUCT</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Workflow interfaces: Message structure</STEXT>
-       <INDEX> 009</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>SUBCONTAINER_BOR_OBJECTS</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Container (name-value pairs)</STEXT>
-       <INDEX> 010</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>SUBCONTAINER_ALL_OBJECTS</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Container (name-value pairs)</STEXT>
-       <INDEX> 011</INDEX>
       </RSFDO>
      </DOCUMENTATION>
     </item>
@@ -2429,55 +2241,46 @@
        <PARAMETER>WORKITEM_ID</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Work item ID</STEXT>
-       <INDEX> 001</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>STATUS</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Processing Status of a Work Item</STEXT>
-       <INDEX> 002</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>USER</PARAMETER>
        <KIND>P</KIND>
        <STEXT>User Name</STEXT>
-       <INDEX> 003</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>LANGUAGE</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Language Key of Current Text Environment</STEXT>
-       <INDEX> 004</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>DO_COMMIT</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Checkbox</STEXT>
-       <INDEX> 005</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>NEW_STATUS</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Workflow interfaces: Work item status</STEXT>
-       <INDEX> 006</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>RETURN_CODE</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Return Value of ABAP Statements</STEXT>
-       <INDEX> 007</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>MESSAGE_LINES</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Workflow Interfaces: Messages</STEXT>
-       <INDEX> 008</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>MESSAGE_STRUCT</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Workflow interfaces: Message structure</STEXT>
-       <INDEX> 009</INDEX>
       </RSFDO>
      </DOCUMENTATION>
     </item>
@@ -2534,49 +2337,41 @@
        <PARAMETER>SUBSTITUTED_OBJECT</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Role Resolution Result</STEXT>
-       <INDEX> 001</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>START_DATE</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Current Date of Application Server</STEXT>
-       <INDEX> 002</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>END_DATE</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Current Date of Application Server</STEXT>
-       <INDEX> 003</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>LANGUAGE</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Language Key of Current Text Environment</STEXT>
-       <INDEX> 004</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>RETURN_CODE</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Return Value of ABAP Statements</STEXT>
-       <INDEX> 005</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>SUBSTITUTES</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Substitute</STEXT>
-       <INDEX> 006</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>MESSAGE_LINES</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Workflow Interfaces: Messages</STEXT>
-       <INDEX> 007</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>MESSAGE_STRUCT</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Workflow interfaces: Message structure</STEXT>
-       <INDEX> 008</INDEX>
       </RSFDO>
      </DOCUMENTATION>
     </item>
@@ -2657,72 +2452,60 @@
        <PARAMETER>WORKITEM_ID</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Work item ID</STEXT>
-       <INDEX> 001</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>ACTUAL_AGENT</PARAMETER>
        <KIND>P</KIND>
        <STEXT>User Name</STEXT>
-       <INDEX> 002</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>LANGUAGE</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Language Key of Current Text Environment</STEXT>
-       <INDEX> 003</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>SET_OBSOLET</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Checkbox</STEXT>
-       <INDEX> 004</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>DO_COMMIT</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Checkbox</STEXT>
-       <INDEX> 005</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>DO_CALLBACK_IN_BACKGROUND</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Checkbox</STEXT>
-       <INDEX> 006</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IFS_XML_CONTAINER</PARAMETER>
        <KIND>P</KIND>
-       <INDEX> 007</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>RETURN_CODE</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Return Value of ABAP Statements</STEXT>
-       <INDEX> 008</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>NEW_STATUS</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Processing Status of a Work Item</STEXT>
-       <INDEX> 009</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>SIMPLE_CONTAINER</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Container (name-value pairs)</STEXT>
-       <INDEX> 010</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>MESSAGE_LINES</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Workflow Interfaces: Messages</STEXT>
-       <INDEX> 011</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>MESSAGE_STRUCT</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Workflow interfaces: Message structure</STEXT>
-       <INDEX> 012</INDEX>
       </RSFDO>
      </DOCUMENTATION>
     </item>
@@ -2780,49 +2563,41 @@
        <PARAMETER>WORKITEM_ID</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Work item ID</STEXT>
-       <INDEX> 001</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>LANGUAGE</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Language Key of Current Text Environment</STEXT>
-       <INDEX> 002</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>USER</PARAMETER>
        <KIND>P</KIND>
        <STEXT>User Name</STEXT>
-       <INDEX> 003</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>RETURN_CODE</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Return Value of ABAP Statements</STEXT>
-       <INDEX> 004</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>RECIPIENTS</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Role Resolution Result</STEXT>
-       <INDEX> 005</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>MESSAGE_LINES</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Workflow Interfaces: Messages</STEXT>
-       <INDEX> 006</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>MESSAGE_STRUCT</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Workflow interfaces: Message structure</STEXT>
-       <INDEX> 007</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>ORIGINAL_RULE_RESULT</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Role Resolution Result</STEXT>
-       <INDEX> 008</INDEX>
       </RSFDO>
      </DOCUMENTATION>
     </item>
@@ -2893,60 +2668,50 @@
        <PARAMETER>WORKITEM_ID</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Work item ID</STEXT>
-       <INDEX> 001</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>LANGUAGE</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Language Key of Current Text Environment</STEXT>
-       <INDEX> 002</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>ACTUAL_AGENT</PARAMETER>
        <KIND>P</KIND>
        <STEXT>User Name</STEXT>
-       <INDEX> 003</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>DO_COMMIT</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Checkbox</STEXT>
-       <INDEX> 004</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>IFS_XML_CONTAINER</PARAMETER>
        <KIND>P</KIND>
-       <INDEX> 005</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>OVERWRITE_TABLES_SIMPLE_CONT</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Checkbox</STEXT>
-       <INDEX> 006</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>RETURN_CODE</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Return Value of ABAP Statements</STEXT>
-       <INDEX> 007</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>SIMPLE_CONTAINER</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Container (name-value pairs)</STEXT>
-       <INDEX> 008</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>MESSAGE_LINES</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Workflow Interfaces: Messages</STEXT>
-       <INDEX> 009</INDEX>
       </RSFDO>
       <RSFDO>
        <PARAMETER>MESSAGE_STRUCT</PARAMETER>
        <KIND>P</KIND>
        <STEXT>Workflow interfaces: Message structure</STEXT>
-       <INDEX> 010</INDEX>
       </RSFDO>
      </DOCUMENTATION>
     </item>
