@@ -1,9 +1,10 @@
-2-Cliks - SAP Business Workflow Approval Anywhere Anytime
-=========================================================
+# 2-Cliks - SAP Business Workflow Approval Anywhere Anytime
 
 This repo contains some client objects for the [2-Cliks Workflow Approval](http://yelcho.github.io/2-Cliks/) solution.
 
 Use the abapGit project for installing this repo. Find it at http://abapgit.org
+
+You can replicate the repository directly or import the file found in the .zip subdirectory.
 
 2-Cliks is technology provided by Yelcho Systems Consulting to allow decision makers
 to execute SAP Business Workflow decision steps anywhere, anytime and on any device.
