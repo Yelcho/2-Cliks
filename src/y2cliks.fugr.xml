@@ -587,6 +587,105 @@
      </DOCUMENTATION>
     </item>
     <item>
+     <FUNCNAME>Y2C_GET_WORKITEM_DETAILS</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Get workitem details in a single RFC</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>WORKITEM_ID</PARAMETER>
+       <TYP>SWR_STRUCT-WORKITEMID</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>USER</PARAMETER>
+       <DEFAULT>SY-UNAME</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>SYUNAME</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>LANGUAGE</PARAMETER>
+       <DEFAULT>SY-LANGU</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>SYLANGU</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>WORKITEM_ATTRIBUTES</PARAMETER>
+       <TYP>SWR_WIHDR</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>DECISION_TITLE</PARAMETER>
+       <TYP>SWR_WIHDR-WI_TEXT</TYP>
+      </RSEXP>
+     </EXPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>OBJECTS_2</PARAMETER>
+       <DBSTRUCT>SWR_OBJ_2</DBSTRUCT>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>ALTERNATIVES</PARAMETER>
+       <DBSTRUCT>SWR_DECIALTS</DBSTRUCT>
+      </RSTBL>
+      <RSTBL>
+       <PARAMETER>RECIPIENTS</PARAMETER>
+       <DBSTRUCT>SWRAGENT</DBSTRUCT>
+      </RSTBL>
+     </TABLES>
+     <EXCEPTION>
+      <RSEXC>
+       <EXCEPTION>WORKITEM_NOT_FOUND</EXCEPTION>
+      </RSEXC>
+     </EXCEPTION>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>WORKITEM_ID</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Work item ID</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>USER</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>User Name</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>LANGUAGE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Language Key of Current Text Environment</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>WORKITEM_ATTRIBUTES</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Work Item Structure</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>DECISION_TITLE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Work Item Text</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>OBJECTS_2</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>WAPI: Generic Structure for Objects (After 4.6)</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ALTERNATIVES</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Alternatives of a User Decision</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>RECIPIENTS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Role Resolution Result</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>WORKITEM_NOT_FOUND</PARAMETER>
+       <KIND>X</KIND>
+       <STEXT>Work item not found</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
      <FUNCNAME>Y2C_PT_ARQ_ATTACHMENT_GET</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
      <SHORT_TEXT>Proxy for PT_ARQ_ATTACHMENT_GET</SHORT_TEXT>
