@@ -1,5 +1,5 @@
 FUNCTION y2c_function_search.
-*"--------------------------------------------------------------------
+*"----------------------------------------------------------------------
 *"*"Local Interface:
 *"  IMPORTING
 *"     VALUE(FUNCNAME) TYPE  RS38L-NAME
@@ -10,7 +10,8 @@ FUNCTION y2c_function_search.
 *"  EXCEPTIONS
 *"      NOTHING_SPECIFIED
 *"      NO_FUNCTION_FOUND
-*"--------------------------------------------------------------------
+*"      OTHER
+*"----------------------------------------------------------------------
 
   CALL FUNCTION 'RFC_FUNCTION_SEARCH'
     EXPORTING

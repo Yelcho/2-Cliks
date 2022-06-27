@@ -67,6 +67,21 @@ FUNCTION y2c_wapi_get_wi_all.
     CHANGING
       data_value            = xcookie.
 
+* We try this a second time to be sure to be sure
+  IF xcookie IS INITIAL.
+    WAIT UP TO 2 SECONDS.
+    CALL METHOD cl_bsp_server_side_cookie=>get_server_cookie
+      EXPORTING
+        name                  = c_cookie_id
+        application_name      = c_cookie_id
+        application_namespace = c_cookie_id
+        username              = c_cookie_id
+        session_id            = c_cookie_id
+        data_name             = c_cookie_id
+      CHANGING
+        data_value            = xcookie.
+  ENDIF.
+
   IF xcookie IS NOT INITIAL.
     TRY.
         IMPORT cookie = lt_wi_buffer FROM DATA BUFFER xcookie.
